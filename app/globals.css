@@ -1,26 +1,75 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 300 100% 99%;
+    --foreground: 275 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 275 30% 15%;
+
+    --primary: 271 81% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 330 100% 71%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 280 60% 97%;
+    --muted-foreground: 275 15% 45%;
+
+    --accent: 45 97% 58%;
+    --accent-foreground: 275 30% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 40% 90%;
+    --input: 280 40% 90%;
+    --ring: 271 81% 56%;
+
+    --radius: 1rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 2px theme("colors.angely.purple.900");
+    paint-order: stroke fill;
+  }
+  .bg-dots {
+    background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+    background-size: 18px 18px;
+  }
+  .gradient-hero {
+    background: radial-gradient(
+        circle at 15% 20%,
+        theme("colors.angely.yellow.300") 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        theme("colors.angely.teal.300") 0%,
+        transparent 40%
+      ),
+      linear-gradient(
+        135deg,
+        theme("colors.angely.pink.100") 0%,
+        theme("colors.angely.purple.100") 60%,
+        theme("colors.angely.purple.50") 100%
+      );
+  }
 }

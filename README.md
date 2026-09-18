@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Anggelykids Shows y Eventos — Landing Page
 
-## Getting Started
+Landing page de alta conversión construida con **Next.js 14 (App Router)**,
+**TypeScript**, **Tailwind CSS** y componentes al estilo **shadcn/ui**.
 
-First, run the development server:
+## Instalación
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx        # Fuentes (Fredoka + Nunito) y metadata SEO
+  page.tsx           # Ensambla todas las secciones
+  globals.css         # Variables de tema y utilidades
+components/
+  navbar.tsx
+  hero.tsx
+  value-props.tsx
+  packages-tabs.tsx   # Tabs de shadcn con las 3 categorías de paquetes
+  package-card.tsx     # Tarjeta individual de paquete
+  quick-quote-form.tsx # Formulario -> mensaje de WhatsApp prellenado
+  faq.tsx
+  footer.tsx
+  whatsapp-float-button.tsx
+  ui/                 # Primitivas shadcn (button, card, badge, tabs, accordion, input, textarea, label, select)
+lib/
+  packages-data.ts     # Catálogo completo de paquetes (fuente única de verdad)
+  utils.ts             # cn() + helpers de WhatsApp
+```
 
-## Learn More
+## Editar el catálogo de paquetes
 
-To learn more about Next.js, take a look at the following resources:
+Todo el contenido de precios, inclusiones, obsequios y cortesías vive en
+`lib/packages-data.ts`. Para agregar, quitar o modificar un paquete, edita el
+arreglo `PACKAGES` — el resto de la UI (tarjetas, tabs, dropdown del
+cotizador) se actualiza automáticamente.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## WhatsApp
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Todos los CTAs usan `buildWhatsAppUrl()` en `lib/utils.ts`, que arma:
 
-## Deploy on Vercel
+```
+https://wa.me/51957189685?text=<mensaje codificado>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Cambia el número ahí si es necesario.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pendiente antes de producción
+
+- Reemplazar `public/logo.png` si se quiere una versión optimizada (SVG o PNG
+  con fondo transparente en mayor resolución).
+- Conectar el formulario cotizador a un backend/CRM si se requiere guardar
+  leads además de enviarlos por WhatsApp.
+- Revisar textos legales/políticas de privacidad si se agregan formularios
+  que recolecten datos personales.

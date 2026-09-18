@@ -45,6 +45,19 @@ export function ValueProps() {
             Más de una década haciendo que cada cumpleaños sea inolvidable, con
             cuidado en cada detalle.
           </p>
+          <div className="relative mx-auto p-40 w-full max-w-md">
+            <div className="absolute inset-0" />
+            <div className="absolute inset-6 flex items-center justify-center rounded-[2.5rem] bg-gradient-to-br from-angely-pink-100 via-angely-purple-100 to-angely-teal-300/40">
+              <div className="text-center">
+                <p className="font-heading text-7xl font-extrabold text-angely-purple-700">
+                  +400
+                </p>
+                <p className="mt-2 text-sm font-bold uppercase tracking-wide text-angely-purple-700/70">
+                  Fiestas felices realizadas
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

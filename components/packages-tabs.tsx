@@ -1,6 +1,19 @@
+"use client";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { PackageCard } from "@/components/package-card";
-import { CATEGORY_LABELS, getPackagesByCategory, type PackageCategory } from "@/lib/packages-data";
+import {
+  CATEGORY_LABELS,
+  getPackagesByCategory,
+  type PackageCategory,
+} from "@/lib/packages-data";
 
 const CATEGORIES: PackageCategory[] = ["clasicos", "huntrix", "sensorial"];
 
@@ -13,13 +26,17 @@ export function PackagesTabs() {
             Nuestros paquetes
           </h2>
           <p className="mt-3 text-foreground/70">
-            Elige la propuesta que mejor se adapte a la edad, temática y presupuesto de tu
-            celebración. Todos los precios están en Soles (S/).
+            Elige la propuesta que mejor se adapte a la edad, temática y
+            presupuesto de tu celebración. Todos los precios están en Soles
+            (S/).
           </p>
         </div>
 
-        <Tabs defaultValue="clasicos" className="mt-12 flex flex-col items-center">
-          <TabsList>
+        <Tabs
+          defaultValue="clasicos"
+          className="mt-12 flex flex-col items-center"
+        >
+          <TabsList className="mb-6">
             {CATEGORIES.map((cat) => (
               <TabsTrigger key={cat} value={cat}>
                 {CATEGORY_LABELS[cat]}
@@ -29,10 +46,27 @@ export function PackagesTabs() {
 
           {CATEGORIES.map((cat) => (
             <TabsContent key={cat} value={cat} className="w-full">
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {getPackagesByCategory(cat).map((pkg) => (
-                  <PackageCard key={pkg.id} pkg={pkg} />
-                ))}
+              <div className="relative mx-auto max-w-6xl px-4 sm:px-12">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: false,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-4 py-4">
+                    {getPackagesByCategory(cat).map((pkg) => (
+                      <CarouselItem
+                        key={pkg.id}
+                        className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                      >
+                        <PackageCard pkg={pkg} className="w-full" />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
               </div>
             </TabsContent>
           ))}

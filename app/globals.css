@@ -55,21 +55,40 @@
     background-size: 18px 18px;
   }
   .gradient-hero {
-    background: radial-gradient(
-        circle at 15% 20%,
-        theme("colors.angely.yellow.300") 0%,
-        transparent 40%
-      ),
-      radial-gradient(
-        circle at 85% 15%,
-        theme("colors.angely.teal.300") 0%,
-        transparent 40%
-      ),
-      linear-gradient(
-        135deg,
-        theme("colors.angely.pink.100") 0%,
-        theme("colors.angely.purple.100") 60%,
-        theme("colors.angely.purple.50") 100%
-      );
+    background: linear-gradient(
+      125deg,
+      theme("colors.angely.pink.100"),
+      theme("colors.angely.yellow.300"),
+      theme("colors.angely.teal.300"),
+      theme("colors.angely.purple.100"),
+      theme("colors.angely.pink.300")
+    );
+    background-size: 300% 300%;
+    animation: hero-gradient-shift 12s ease-in-out infinite alternate,
+               hero-pulse 6s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes hero-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes hero-pulse {
+  0% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.06) saturate(1.2);
+  }
+  100% {
+    filter: brightness(0.98) saturate(1.05);
   }
 }

@@ -29,7 +29,7 @@ export function Navbar() {
             alt="Anggelykids Shows y Eventos"
             width={52}
             height={52}
-            className="h-24 w-24 object-contain"
+            className="h-20 w-20 object-contain"
             priority
           />
         </a>

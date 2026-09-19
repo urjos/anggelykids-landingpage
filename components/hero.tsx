@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -68,7 +69,7 @@ export function Hero() {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="#paquetes">Ver catálogo de paquetes</a>
+              <Link href="/paquetes">Ver catálogo de paquetes</Link>
             </Button>
           </div>
         </div>

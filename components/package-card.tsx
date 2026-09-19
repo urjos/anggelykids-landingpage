@@ -38,31 +38,31 @@ export function PackageCard({
         </div>
       )}
 
-      <CardHeader className="pb-2">
+      <CardHeader className="p-4 sm:p-6 pb-2 sm:pb-2">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-heading text-4xl font-extrabold text-angely-purple-900">
+          <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-angely-purple-900">
             {pkg.name}
           </h3>
         </div>
         <div className="flex items-baseline gap-2">
-          <span className="font-heading text-3xl font-extrabold text-angely-pink-600">
+          <span className="font-heading text-2xl sm:text-3xl font-extrabold text-angely-pink-600">
             {pkg.priceLabel}
           </span>
         </div>
-        <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground/60">
+        <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-foreground/60">
           <Clock className="h-4 w-4" />
           Duración: {pkg.duration}
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-4 pt-0 pb-2">
-        <ul className="space-y-2">
+      <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0 pb-2">
+        <ul className="space-y-1.5 sm:space-y-2">
           {pkg.includes.map((item) => (
             <li
               key={item}
-              className="flex items-start gap-2 text-sm text-foreground/80"
+              className="flex items-start gap-2 text-xs sm:text-sm text-foreground/80"
             >
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+              <Check className="mt-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-emerald-500" />
               <span>{item}</span>
             </li>
           ))}
@@ -70,7 +70,7 @@ export function PackageCard({
 
         {pkg.courtesy && pkg.courtesy.length > 0 && (
           <div>
-            <Badge variant="success" className="mb-2">
+            <Badge variant="success" className="mb-1.5 sm:mb-2 text-xs">
               <Sparkles className="h-3 w-3" />
               Cortesía incluida
             </Badge>
@@ -78,7 +78,7 @@ export function PackageCard({
               {pkg.courtesy.map((item) => (
                 <li
                   key={item}
-                  className="text-sm font-semibold text-emerald-700"
+                  className="text-xs sm:text-sm font-semibold text-emerald-700"
                 >
                   • {item}
                 </li>
@@ -87,27 +87,27 @@ export function PackageCard({
           </div>
         )}
 
-        <div className="rounded-2xl bg-angely-purple-50 p-4">
-          <div className="mb-2 flex items-center gap-1.5 text-sm font-extrabold text-angely-purple-700">
-            <Gift className="h-4 w-4" />
+        <div className="rounded-2xl bg-angely-purple-50 p-3.5 sm:p-4">
+          <div className="mb-1.5 sm:mb-2 flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-angely-purple-700">
+            <Gift className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             Obsequio
           </div>
           <ul className="space-y-1">
             {pkg.gifts.map((item) => (
-              <li key={item} className="text-sm text-angely-purple-900/80">
+              <li key={item} className="text-xs sm:text-sm text-angely-purple-900/80">
                 • {item}
               </li>
             ))}
           </ul>
         </div>
 
-        <p className="text-xs font-semibold text-foreground/50">
+        <p className="text-[11px] sm:text-xs font-semibold text-foreground/50">
           No incluye movilidad
         </p>
       </CardContent>
 
-      <CardFooter className="pt-2 pb-6">
-        <Button asChild variant="whatsapp" className="w-full">
+      <CardFooter className="p-4 sm:p-6 pt-2 pb-5 sm:pb-6">
+        <Button asChild variant="whatsapp" className="w-full text-sm">
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
             <MessageCircle className="h-4 w-4" />
             Cotizar este paquete

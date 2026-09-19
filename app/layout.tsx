@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Fredoka, Nunito } from "next/font/google";
 
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { WhatsAppFloatButton } from "@/components/whatsapp-float-button";
+
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -36,8 +40,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${fredoka.variable} ${nunito.variable} font-body antialiased`}>
-        {children}
+      <body className={`${fredoka.variable} ${nunito.variable} font-body antialiased flex min-h-screen flex-col`}>
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
+        <WhatsAppFloatButton />
       </body>
     </html>
   );

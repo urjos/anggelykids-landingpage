@@ -27,8 +27,7 @@ export function PackagesTabs() {
           </h2>
           <p className="mt-3 text-foreground/70">
             Elige la propuesta que mejor se adapte a la edad, temática y
-            presupuesto de tu celebración. Todos los precios están en Soles
-            (S/).
+            presupuesto de tu celebración.
           </p>
         </div>
 
@@ -46,7 +45,7 @@ export function PackagesTabs() {
 
           {CATEGORIES.map((cat) => (
             <TabsContent key={cat} value={cat} className="w-full">
-              <div className="relative mx-auto max-w-6xl px-4 sm:px-12">
+              <div className="relative mx-auto max-w-[340px] sm:max-w-2xl lg:max-w-5xl px-11 sm:px-12 lg:px-14">
                 <Carousel
                   opts={{
                     align: "start",
@@ -64,8 +63,8 @@ export function PackagesTabs() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
+                  <CarouselPrevious className="-left-10 sm:-left-10 lg:-left-12 h-8 w-8 sm:h-10 sm:w-10" />
+                  <CarouselNext className="-right-10 sm:-right-10 lg:-right-12 h-8 w-8 sm:h-10 sm:w-10" />
                 </Carousel>
               </div>
             </TabsContent>

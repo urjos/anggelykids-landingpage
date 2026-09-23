@@ -57,15 +57,6 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button asChild variant="whatsapp" size="default">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <Phone className="h-4 w-4" />
-              Contactar al WhatsApp
-            </a>
-          </Button>
-        </div>
-
         <button
           className="rounded-full p-2 text-angely-purple-700 lg:hidden"
           onClick={() => setOpen((v) => !v)}
@@ -96,12 +87,6 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <Button asChild variant="whatsapp" className="mt-2 w-full">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <Phone className="h-4 w-4" />
-                Contactar al Whatsapp
-              </a>
-            </Button>
           </nav>
         </div>
       )}

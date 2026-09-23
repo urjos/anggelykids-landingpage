@@ -43,7 +43,7 @@ export function Hero() {
       <div className="pointer-events-none absolute right-0 top-10 h-80 w-80 rounded-full bg-angely-teal-300/50 blur-3xl animate-pulse [animation-duration:5s]" />
       <div className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-angely-pink-300/50 blur-3xl animate-pulse [animation-duration:7s]" />
 
-      <div className="container relative z-10 flex flex-col items-start gap-8">
+      <div className="container relative z-10 flex flex-col lg:flex-row items-start gap-8">
         <div className="max-w-3xl">
           <Badge variant="secondary" className="mb-4">
             Shows temáticos y sensoriales en Lima

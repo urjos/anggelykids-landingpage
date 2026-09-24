@@ -19,23 +19,20 @@ const CATEGORIES: PackageCategory[] = ["clasicos", "huntrix", "sensorial"];
 
 export function PackagesTabs() {
   return (
-    <section id="paquetes" className="bg-angely-purple-50/50 py-20">
-      <div className="container">
-        <div className="mx-auto max-w-2xl text-center">
+    <section id="paquetes" className="bg-angely-purple-50/50 py-10">
+      <div className="container grid gap-5">
+        <div className="mx-auto max-w-2xl text-center grid gap-3">
           <h2 className="font-heading text-3xl font-extrabold text-angely-purple-900 sm:text-4xl">
             Nuestros paquetes
           </h2>
-          <p className="mt-3 text-foreground/70">
+          <p className="text-foreground/70">
             Elige la propuesta que mejor se adapte a la edad, temática y
             presupuesto de tu celebración.
           </p>
         </div>
 
-        <Tabs
-          defaultValue="clasicos"
-          className="mt-12 flex flex-col items-center"
-        >
-          <TabsList className="mb-6">
+        <Tabs defaultValue="clasicos" className="flex flex-col items-center">
+          <TabsList>
             {CATEGORIES.map((cat) => (
               <TabsTrigger key={cat} value={cat}>
                 {CATEGORY_LABELS[cat]}

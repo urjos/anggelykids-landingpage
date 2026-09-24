@@ -25,7 +25,7 @@ export function PackageCard({
   return (
     <Card
       className={cn(
-        "flex flex-col overflow-hidden transition-all duration-300 hover:shadow-playful",
+        "flex flex-col overflow-hidden transition-all duration-300",
         pkg.featured
           ? "border-2 border-angely-pink-500 shadow-playful-pink"
           : "border-border",

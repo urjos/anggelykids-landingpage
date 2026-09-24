@@ -37,7 +37,7 @@ export function QuickQuoteForm() {
   return (
     <section id="cotizar" className="py-12 sm:py-16 md:py-20 pb-20 sm:pb-24">
       <div className="container px-3.5 sm:px-6">
-        <div className="mx-auto max-w-3xl rounded-2xl sm:rounded-3xl bg-gradient-to-br from-angely-purple-600 to-angely-pink-600 p-0.5 sm:p-1 shadow-playful">
+        <div className="mx-auto max-w-3xl rounded-2xl sm:rounded-3xl p-0.5 sm:p-1 shadow-lg">
           <div className="rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-4px)] bg-white p-4 sm:p-8 md:p-10">
             <div className="mb-6 sm:mb-8 text-center">
               <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-angely-purple-900">
@@ -49,9 +49,14 @@ export function QuickQuoteForm() {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="grid gap-3.5 sm:gap-5 sm:grid-cols-2">
+            <form
+              onSubmit={handleSubmit}
+              className="grid gap-3.5 sm:gap-5 sm:grid-cols-2"
+            >
               <div className="space-y-1.5">
-                <Label htmlFor="name" className="text-xs sm:text-sm">Nombre</Label>
+                <Label htmlFor="name" className="text-xs sm:text-sm">
+                  Nombre
+                </Label>
                 <Input
                   id="name"
                   placeholder="Tu nombre completo"
@@ -62,7 +67,9 @@ export function QuickQuoteForm() {
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="phone" className="text-xs sm:text-sm">Teléfono</Label>
+                <Label htmlFor="phone" className="text-xs sm:text-sm">
+                  Teléfono
+                </Label>
                 <Input
                   id="phone"
                   type="tel"
@@ -74,7 +81,9 @@ export function QuickQuoteForm() {
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="date" className="text-xs sm:text-sm">Fecha del evento</Label>
+                <Label htmlFor="date" className="text-xs sm:text-sm">
+                  Fecha del evento
+                </Label>
                 <Input
                   id="date"
                   type="date"
@@ -85,7 +94,9 @@ export function QuickQuoteForm() {
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="district" className="text-xs sm:text-sm">Distrito</Label>
+                <Label htmlFor="district" className="text-xs sm:text-sm">
+                  Distrito
+                </Label>
                 <Input
                   id="district"
                   placeholder="Ej. Surco, San Miguel..."
@@ -96,7 +107,9 @@ export function QuickQuoteForm() {
               </div>
 
               <div className="space-y-1.5 sm:col-span-2">
-                <Label htmlFor="package" className="text-xs sm:text-sm">Paquete de interés</Label>
+                <Label htmlFor="package" className="text-xs sm:text-sm">
+                  Paquete de interés
+                </Label>
                 <Select
                   id="package"
                   value={packageId}

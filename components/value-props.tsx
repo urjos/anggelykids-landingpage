@@ -58,30 +58,6 @@ export function ValueProps() {
                 </div>
               </div>
             </div>
-            <div className="relative mx-auto p-40 w-full max-w-md">
-              <div className="absolute inset-6 flex items-center justify-center rounded-xl bg-gradient-to-br from-angely-pink-100 via-angely-purple-100 to-angely-teal-300/40">
-                <div className="text-center">
-                  <p className="font-heading text-7xl font-extrabold text-angely-purple-700">
-                    +400
-                  </p>
-                  <p className="mt-2 text-sm font-bold uppercase tracking-wide text-angely-purple-700/70">
-                    Fiestas felices realizadas
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="relative mx-auto p-40 w-full max-w-md">
-              <div className="absolute inset-6 flex items-center justify-center rounded-xl bg-gradient-to-br from-angely-pink-100 via-angely-purple-100 to-angely-teal-300/40">
-                <div className="text-center">
-                  <p className="font-heading text-7xl font-extrabold text-angely-purple-700">
-                    +400
-                  </p>
-                  <p className="mt-2 text-sm font-bold uppercase tracking-wide text-angely-purple-700/70">
-                    Fiestas felices realizadas
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

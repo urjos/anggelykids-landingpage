@@ -59,11 +59,11 @@ export function Navbar() {
         </nav>
 
         <button
-          className="rounded-full p-2 text-angely-purple-700 lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-angely-purple-50 text-angely-purple-700 hover:bg-angely-purple-100 transition-colors border border-angely-purple-100/60 shadow-xs lg:hidden active:scale-95"
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menú"
         >
-          {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 

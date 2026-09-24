@@ -35,22 +35,23 @@ export function QuickQuoteForm() {
   }
 
   return (
-    <section id="cotizar" className="py-20">
-      <div className="container">
-        <div className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-angely-purple-600 to-angely-pink-600 p-1 shadow-playful">
-          <div className="rounded-[calc(1.5rem-4px)] bg-white p-8 sm:p-10">
-            <div className="mb-8 text-center">
-              <h2 className="font-heading text-3xl font-extrabold text-angely-purple-900">
+    <section id="cotizar" className="py-12 sm:py-16 md:py-20 pb-20 sm:pb-24">
+      <div className="container px-3.5 sm:px-6">
+        <div className="mx-auto max-w-3xl rounded-2xl sm:rounded-3xl bg-gradient-to-br from-angely-purple-600 to-angely-pink-600 p-0.5 sm:p-1 shadow-playful">
+          <div className="rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-4px)] bg-white p-4 sm:p-8 md:p-10">
+            <div className="mb-6 sm:mb-8 text-center">
+              <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-angely-purple-900">
                 Cotizador rápido
               </h2>
-              <p className="mt-2 text-foreground/70">
-                Completa tus datos y te enviamos la cotización directo a WhatsApp.
+              <p className="mt-2 text-xs sm:text-sm md:text-base text-foreground/70">
+                Completa tus datos y te enviamos la cotización directo a
+                WhatsApp.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">
-              <div className="space-y-2">
-                <Label htmlFor="name">Nombre</Label>
+            <form onSubmit={handleSubmit} className="grid gap-3.5 sm:gap-5 sm:grid-cols-2">
+              <div className="space-y-1.5">
+                <Label htmlFor="name" className="text-xs sm:text-sm">Nombre</Label>
                 <Input
                   id="name"
                   placeholder="Tu nombre completo"
@@ -60,8 +61,8 @@ export function QuickQuoteForm() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="phone">Teléfono</Label>
+              <div className="space-y-1.5">
+                <Label htmlFor="phone" className="text-xs sm:text-sm">Teléfono</Label>
                 <Input
                   id="phone"
                   type="tel"
@@ -72,8 +73,8 @@ export function QuickQuoteForm() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="date">Fecha del evento</Label>
+              <div className="space-y-1.5">
+                <Label htmlFor="date" className="text-xs sm:text-sm">Fecha del evento</Label>
                 <Input
                   id="date"
                   type="date"
@@ -83,8 +84,8 @@ export function QuickQuoteForm() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="district">Distrito</Label>
+              <div className="space-y-1.5">
+                <Label htmlFor="district" className="text-xs sm:text-sm">Distrito</Label>
                 <Input
                   id="district"
                   placeholder="Ej. Surco, San Miguel..."
@@ -94,8 +95,8 @@ export function QuickQuoteForm() {
                 />
               </div>
 
-              <div className="space-y-2 sm:col-span-2">
-                <Label htmlFor="package">Paquete de interés</Label>
+              <div className="space-y-1.5 sm:col-span-2">
+                <Label htmlFor="package" className="text-xs sm:text-sm">Paquete de interés</Label>
                 <Select
                   id="package"
                   value={packageId}
@@ -109,9 +110,14 @@ export function QuickQuoteForm() {
                 </Select>
               </div>
 
-              <Button type="submit" variant="whatsapp" size="lg" className="sm:col-span-2">
-                <Send className="h-4 w-4" />
-                Enviar cotización a WhatsApp
+              <Button
+                type="submit"
+                variant="whatsapp"
+                size="lg"
+                className="w-full sm:col-span-2 h-auto min-h-[48px] sm:min-h-[54px] py-3.5 px-4 sm:px-8 text-xs sm:text-base font-bold whitespace-normal text-center shadow-lg active:scale-[0.98] mt-2"
+              >
+                <Send className="h-4 w-4 shrink-0" />
+                <span>Enviar cotización a WhatsApp</span>
               </Button>
             </form>
           </div>

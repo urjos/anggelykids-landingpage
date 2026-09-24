@@ -63,18 +63,12 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" variant="whatsapp">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                Cotizar por WhatsApp
-              </a>
-            </Button>
             <Button asChild size="lg" variant="outline">
               <Link href="/paquetes">Ver catálogo de paquetes</Link>
             </Button>
           </div>
         </div>
 
-        {/* Carrusel integrado ocupando todo el ancho */}
         <div className="w-full mt-4 sm:mt-6">
           <div className="relative w-full overflow-hidden rounded-3xl shadow-playful backdrop-blur-sm">
             <div className="relative h-60 sm:h-72 lg:h-80 w-full overflow-hidden">

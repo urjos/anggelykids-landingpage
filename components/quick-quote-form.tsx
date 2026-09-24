@@ -7,18 +7,43 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { FormError } from "@/components/ui/form-error";
 import { PACKAGES } from "@/lib/packages-data";
 import { buildWhatsAppUrl } from "@/lib/utils";
+
+function formatPhoneNumber(value: string) {
+  let digits = value.replace(/\D/g, "");
+  if (digits.startsWith("51") && digits.length > 9) {
+    digits = digits.slice(2);
+  }
+  digits = digits.slice(0, 9);
+
+  if (digits.length <= 3) return digits;
+  if (digits.length <= 6) return `${digits.slice(0, 3)} ${digits.slice(3)}`;
+  return `${digits.slice(0, 3)} ${digits.slice(3, 6)} ${digits.slice(6)}`;
+}
 
 export function QuickQuoteForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [phoneTouched, setPhoneTouched] = useState(false);
   const [date, setDate] = useState("");
   const [district, setDistrict] = useState("");
   const [packageId, setPackageId] = useState(PACKAGES[0].id);
 
+  const phoneDigits = phone.replace(/\D/g, "");
+  const phoneError =
+    phoneTouched && phoneDigits.length < 9
+      ? "Ingresa un número válido de al menos 9 dígitos."
+      : "";
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setPhoneTouched(true);
+
+    if (phoneDigits.length < 9) {
+      return;
+    }
 
     const selectedPackage = PACKAGES.find((p) => p.id === packageId);
 
@@ -75,9 +100,20 @@ export function QuickQuoteForm() {
                   type="tel"
                   placeholder="9XX XXX XXX"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    const formatted = formatPhoneNumber(e.target.value);
+                    setPhone(formatted);
+                    if (phoneTouched && formatted.replace(/\D/g, "").length >= 9) {
+                      setPhoneTouched(true);
+                    }
+                  }}
+                  onBlur={() => setPhoneTouched(true)}
+                  className={
+                    phoneError ? "border-rose-400 focus-visible:ring-rose-400" : ""
+                  }
                   required
                 />
+                <FormError message={phoneError} />
               </div>
 
               <div className="space-y-1.5">

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/ui/form-error";
 import { PACKAGES } from "@/lib/packages-data";
 import { buildWhatsAppUrl } from "@/lib/utils";
+import Image from "next/image";
 
 function formatPhoneNumber(value: string) {
   let digits = value.replace(/\D/g, "");
@@ -103,13 +104,18 @@ export function QuickQuoteForm() {
                   onChange={(e) => {
                     const formatted = formatPhoneNumber(e.target.value);
                     setPhone(formatted);
-                    if (phoneTouched && formatted.replace(/\D/g, "").length >= 9) {
+                    if (
+                      phoneTouched &&
+                      formatted.replace(/\D/g, "").length >= 9
+                    ) {
                       setPhoneTouched(true);
                     }
                   }}
                   onBlur={() => setPhoneTouched(true)}
                   className={
-                    phoneError ? "border-rose-400 focus-visible:ring-rose-400" : ""
+                    phoneError
+                      ? "border-rose-400 focus-visible:ring-rose-400"
+                      : ""
                   }
                   required
                 />
@@ -163,10 +169,16 @@ export function QuickQuoteForm() {
                 type="submit"
                 variant="whatsapp"
                 size="lg"
-                className="w-full sm:col-span-2 h-auto min-h-[48px] sm:min-h-[54px] py-3.5 px-4 sm:px-8 text-xs sm:text-base font-bold whitespace-normal text-center shadow-lg active:scale-[0.98] mt-2"
+                className="w-full sm:col-span-2 h-auto min-h-[48px] sm:min-h-[54px] py-3.5 px-4 sm:px-6 text-sm sm:text-base font-bold whitespace-normal text-center shadow-lg active:scale-[0.98] mt-2"
               >
-                <Send className="h-4 w-4 shrink-0" />
-                <span>Enviar cotización a WhatsApp</span>
+                <Image
+                  src="/icons/whatsapp.png"
+                  alt="WhatsApp"
+                  width={30}
+                  height={30}
+                  className="object-contain brightness-0 invert"
+                />
+                <span>Enviar cotización</span>
               </Button>
             </form>
           </div>

@@ -26,14 +26,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-white/40 bg-white/80 backdrop-blur-md">
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center py-1 group">
           <Image
             src="/logo.png"
             alt="Anggelykids Shows y Eventos"
-            width={52}
-            height={52}
-            className="h-20 w-20 object-contain"
+            width={220}
+            height={134}
+            className="h-14 sm:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105 drop-shadow-sm"
             priority
+            quality={95}
           />
         </Link>
 

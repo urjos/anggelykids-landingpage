@@ -1,11 +1,15 @@
-export type PackageCategory = "clasicos" | "huntrix" | "sensorial";
+export type PackageCategory =
+  | "clasicos"
+  | "huntrix"
+  | "sensorial"
+  | "navideños";
 
 export interface PartyPackage {
   id: string;
   category: PackageCategory;
   name: string;
   price: number;
-  priceLabel: string; // "S/ 699"
+  priceLabel: string;
   duration: string;
   includes: string[];
   gifts: string[];
@@ -17,6 +21,7 @@ export const CATEGORY_LABELS: Record<PackageCategory, string> = {
   clasicos: "Shows Clásicos y Temáticos",
   huntrix: "Especial Huntrix (Temático)",
   sensorial: "Sensorial & Estimulación",
+  navideños: "Paquetes Navideños",
 };
 
 export const PACKAGES: PartyPackage[] = [
@@ -38,7 +43,12 @@ export const PACKAGES: PartyPackage[] = [
       "Rompe la piñata",
       "Happy Birthday",
     ],
-    gifts: ["Globos pencil", "Bola de luz rítmica", "Bazooka de burbujas", "Bombarda"],
+    gifts: [
+      "Globos pencil",
+      "Bola de luz rítmica",
+      "Bazooka de burbujas",
+      "Bombarda",
+    ],
   },
   {
     id: "mi-fiesta",
@@ -58,7 +68,13 @@ export const PACKAGES: PartyPackage[] = [
       "Rompe la piñata",
       "Happy Birthday",
     ],
-    gifts: ["Globos pencil", "Bola de luz rítmica", "Bazooka de burbujas", "Bombarda", "AnggelyStickers para nombres"],
+    gifts: [
+      "Globos pencil",
+      "Bola de luz rítmica",
+      "Bazooka de burbujas",
+      "Bombarda",
+      "AnggelyStickers para nombres",
+    ],
     courtesy: ["Túnel Mágico"],
   },
   {
@@ -80,7 +96,13 @@ export const PACKAGES: PartyPackage[] = [
       "Rompe la piñata",
       "Happy Birthday",
     ],
-    gifts: ["Globos pencil", "Bola de luz rítmica", "Bazooka de burbujas", "Pulseras LED", "AnggelyStickers para nombre"],
+    gifts: [
+      "Globos pencil",
+      "Bola de luz rítmica",
+      "Bazooka de burbujas",
+      "Pulseras LED",
+      "AnggelyStickers para nombre",
+    ],
     courtesy: ["Encapsulador de burbujas", "Túnel Mágico"],
   },
   {
@@ -138,7 +160,11 @@ export const PACKAGES: PartyPackage[] = [
       "AnggelyStickers para nombre",
       "1 Arlequín para Mini Hora Loca",
     ],
-    courtesy: ["Túnel Mágico", "Cañón lanza confetti", "Cuenta cuentos con títeres"],
+    courtesy: [
+      "Túnel Mágico",
+      "Cañón lanza confetti",
+      "Cuenta cuentos con títeres",
+    ],
   },
   {
     id: "mega-fiesta-premium",
@@ -218,7 +244,11 @@ export const PACKAGES: PartyPackage[] = [
       "Rompe la piñata",
       "Cantamos Happy Birthday",
     ],
-    gifts: ["25 Globos pencil", "30 stickers para nombre", "Bola de luz rítmica"],
+    gifts: [
+      "25 Globos pencil",
+      "30 stickers para nombre",
+      "Bola de luz rítmica",
+    ],
   },
   {
     id: "huntrix-deluxe",
@@ -275,7 +305,11 @@ export const PACKAGES: PartyPackage[] = [
       "Romper la piñata",
       "Cantamos Cumpleaños Feliz",
     ],
-    gifts: ["1 Bandeja de cortecía (Orbitz o arroz con accesorios)", "Bazooka de burbujas", "Piso para juegos"],
+    gifts: [
+      "1 Bandeja de cortecía (Orbitz o arroz con accesorios)",
+      "Bazooka de burbujas",
+      "Piso para juegos",
+    ],
   },
   {
     id: "sensorial-burbujas-2",
@@ -323,7 +357,12 @@ export const PACKAGES: PartyPackage[] = [
       "Romper la piñata",
       "Cantamos Cumpleaños Feliz",
     ],
-    gifts: ["30 minutos de caritas pintadas", "Bazooka de burbujas", "Piso para juegos", "Túnel Mágico"],
+    gifts: [
+      "30 minutos de caritas pintadas",
+      "Bazooka de burbujas",
+      "Piso para juegos",
+      "Túnel Mágico",
+    ],
     featured: true,
   },
   {
@@ -344,7 +383,12 @@ export const PACKAGES: PartyPackage[] = [
       "Rompe la piñata",
       "Happy Birthday",
     ],
-    gifts: ["Globos pencil", "Bola de luz rítmica", "Bazooka de burbujas", "Bombarda"],
+    gifts: [
+      "Globos pencil",
+      "Bola de luz rítmica",
+      "Bazooka de burbujas",
+      "Bombarda",
+    ],
   },
   {
     id: "burbupack-2",
@@ -365,7 +409,12 @@ export const PACKAGES: PartyPackage[] = [
       "Rompe la piñata",
       "Happy Birthday",
     ],
-    gifts: ["Globos pencil", "Bola de luz rítmica", "Bazooka de burbujas", "Bombarda"],
+    gifts: [
+      "Globos pencil",
+      "Bola de luz rítmica",
+      "Bazooka de burbujas",
+      "Bombarda",
+    ],
   },
 ];
 

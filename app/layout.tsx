@@ -6,7 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloatButton } from "@/components/whatsapp-float-button";
 
-import "./globals.css";
+import "../global.css";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -21,7 +21,8 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Anggelykids Shows y Eventos | Shows infantiles y estimulación sensorial en Lima",
+  title:
+    "Anggelykids Shows y Eventos | Shows infantiles y estimulación sensorial en Lima",
   description:
     "Shows temáticos, animación didáctica y estimulación sensorial para fiestas infantiles en Lima. Cotiza tu paquete por WhatsApp al 957 189 685.",
   openGraph: {
@@ -40,7 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${fredoka.variable} ${nunito.variable} font-body antialiased flex min-h-screen flex-col`}>
+      <body
+        className={`${fredoka.variable} ${nunito.variable} font-body antialiased flex min-h-screen flex-col`}
+      >
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />

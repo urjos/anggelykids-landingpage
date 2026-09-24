@@ -12,14 +12,17 @@ export function Footer() {
     <footer className="bg-angely-purple-900 py-2 text-white">
       <div className="container grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex justify-center md:justify-start items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Anggelykids Shows y Eventos"
-              width={200}
-              height={200}
-              className="h-35 w-35 object-contain"
-            />
+          <div className="flex justify-center md:justify-start items-center">
+            <div className="rounded-2xl p-2 shadow-sm inline-block">
+              <Image
+                src="/logo.png"
+                alt="Anggelykids Shows y Eventos"
+                width={220}
+                height={134}
+                className="h-14 sm:h-16 w-auto object-contain"
+                quality={95}
+              />
+            </div>
           </div>
           <p className="mt-4 text-sm text-white/70">
             Shows infantiles temáticos y estimulación sensorial en Lima. Hacemos

@@ -8,6 +8,7 @@ import { Select } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/ui/form-error";
 import { PACKAGES } from "@/constants/packages-data";
+import { DISTRICTS } from "@/constants/districts";
 import { buildWhatsAppUrl, cn } from "@/lib/utils";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 
@@ -150,11 +151,18 @@ export function QuickQuoteForm() {
                 </Label>
                 <Input
                   id="district"
-                  placeholder="Ej. Surco, San Miguel..."
+                  list="districts-list"
+                  placeholder="Ej. Santiago de Surco, San Miguel..."
                   value={district}
                   onChange={(e) => setDistrict(e.target.value)}
+                  autoComplete="off"
                   required
                 />
+                <datalist id="districts-list">
+                  {DISTRICTS.map((d) => (
+                    <option key={d} value={d} />
+                  ))}
+                </datalist>
               </div>
 
               {/* Rango de edad (0 a 15 años) */}

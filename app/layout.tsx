@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     "Anggelykids Shows y Eventos | Shows infantiles y estimulación sensorial en Lima",
   description:
     "Shows temáticos, animación didáctica y estimulación sensorial para fiestas infantiles en Lima. Cotiza tu paquete por WhatsApp al 957 189 685.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Anggelykids Shows y Eventos",
     description:

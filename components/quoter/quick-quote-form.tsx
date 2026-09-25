@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/ui/form-error";
+import { Textarea } from "@/components/ui/textarea";
 import { PACKAGES } from "@/constants/packages-data";
 import { DISTRICTS } from "@/constants/districts";
 import { buildWhatsAppUrl, cn } from "@/lib/utils";
@@ -34,6 +35,7 @@ export function QuickQuoteForm() {
   const [maxAge, setMaxAge] = useState(7);
   const [childrenCount, setChildrenCount] = useState("15 a 25 niños");
   const [packageId, setPackageId] = useState(PACKAGES[0].id);
+  const [extraNotes, setExtraNotes] = useState("");
 
   const phoneDigits = phone.replace(/\D/g, "");
   const phoneError =
@@ -56,7 +58,7 @@ export function QuickQuoteForm() {
         ? `${minAge} ${minAge === 1 ? "año" : "años"}`
         : `${minAge} a ${maxAge} años`;
 
-    const message = [
+    const messageLines = [
       "Hola Anggelykids! 👋 Quiero solicitar una cotización:",
       `• Nombre: ${name || "-"}`,
       `• Teléfono: ${phone || "-"}`,
@@ -65,13 +67,19 @@ export function QuickQuoteForm() {
       `• Rango de edad: ${ageRangeText}`,
       `• Cantidad de niños: ${childrenCount || "-"}`,
       `• Paquete de interés: ${selectedPackage ? `${selectedPackage.name} (${selectedPackage.priceLabel})` : "-"}`,
-    ].join("\n");
+    ];
+
+    if (extraNotes.trim()) {
+      messageLines.push(`• Especificación extra: ${extraNotes.trim()}`);
+    }
+
+    const message = messageLines.join("\n");
 
     window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
   }
 
   return (
-    <section id="cotizar" className="py-12 sm:py-16 md:py-20 pb-20 sm:pb-24">
+    <section id="cotizar" className="pt-8 pb-10">
       <div className="container px-3.5 sm:px-6">
         <div className="mx-auto max-w-3xl rounded-2xl sm:rounded-3xl p-0.5 sm:p-1 shadow-lg">
           <div className="rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-4px)] bg-white p-4 sm:p-8 md:p-10">
@@ -195,7 +203,9 @@ export function QuickQuoteForm() {
                     >
                       {Array.from({ length: 16 }, (_, i) => (
                         <option key={i} value={i}>
-                          {i === 0 ? "0 años (Bebés)" : `${i} ${i === 1 ? "año" : "años"}`}
+                          {i === 0
+                            ? "0 años (Bebés)"
+                            : `${i} ${i === 1 ? "año" : "años"}`}
                         </option>
                       ))}
                     </Select>
@@ -217,7 +227,9 @@ export function QuickQuoteForm() {
                     >
                       {Array.from({ length: 16 }, (_, i) => (
                         <option key={i} value={i}>
-                          {i === 0 ? "0 años (Bebés)" : `${i} ${i === 1 ? "año" : "años"}`}
+                          {i === 0
+                            ? "0 años (Bebés)"
+                            : `${i} ${i === 1 ? "año" : "años"}`}
                         </option>
                       ))}
                     </Select>
@@ -226,7 +238,9 @@ export function QuickQuoteForm() {
 
                 {/* Acceso rápido a rangos frecuentes */}
                 <div className="flex flex-wrap items-center gap-1 pt-1">
-                  <span className="text-[10px] text-foreground/50 mr-0.5">Rápido:</span>
+                  <span className="text-[10px] text-foreground/50 mr-0.5">
+                    Rápido:
+                  </span>
                   {[
                     { label: "1 a 3", min: 1, max: 3 },
                     { label: "4 a 7", min: 4, max: 7 },
@@ -246,7 +260,7 @@ export function QuickQuoteForm() {
                           "text-[10px] px-2 py-0.5 rounded-full border transition-all",
                           isSelected
                             ? "bg-angely-purple-700 text-white border-angely-purple-700 font-bold shadow-xs"
-                            : "bg-angely-purple-50/60 text-angely-purple-900 border-angely-purple-200/70 hover:bg-angely-purple-100"
+                            : "bg-angely-purple-50/60 text-angely-purple-900 border-angely-purple-200/70 hover:bg-angely-purple-100",
                         )}
                       >
                         {p.label} años
@@ -259,7 +273,10 @@ export function QuickQuoteForm() {
               {/* Cantidad de niños */}
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="children-count" className="text-xs sm:text-sm">
+                  <Label
+                    htmlFor="children-count"
+                    className="text-xs sm:text-sm"
+                  >
                     Cantidad de niños
                   </Label>
                   <span className="text-[11px] font-bold text-angely-purple-700 bg-angely-purple-50 border border-angely-purple-200/60 px-2 py-0.5 rounded-full">
@@ -274,7 +291,9 @@ export function QuickQuoteForm() {
                 >
                   <option value="Menos de 10 niños">Menos de 10 niños</option>
                   <option value="10 a 15 niños">10 a 15 niños</option>
-                  <option value="15 a 25 niños">15 a 25 niños (Recomendado)</option>
+                  <option value="15 a 25 niños">
+                    15 a 25 niños (Recomendado)
+                  </option>
                   <option value="25 a 35 niños">25 a 35 niños</option>
                   <option value="35 a 50 niños">35 a 50 niños</option>
                   <option value="Más de 50 niños">Más de 50 niños</option>
@@ -282,7 +301,9 @@ export function QuickQuoteForm() {
 
                 {/* Acceso rápido a opciones comunes */}
                 <div className="flex flex-wrap items-center gap-1 pt-1">
-                  <span className="text-[10px] text-foreground/50 mr-0.5">Rápido:</span>
+                  <span className="text-[10px] text-foreground/50 mr-0.5">
+                    Rápido:
+                  </span>
                   {["10 a 15", "15 a 25", "25 a 35", "+50"].map((label) => {
                     const fullVal =
                       label === "+50" ? "Más de 50 niños" : `${label} niños`;
@@ -296,7 +317,7 @@ export function QuickQuoteForm() {
                           "text-[10px] px-2 py-0.5 rounded-full border transition-all",
                           isSelected
                             ? "bg-angely-purple-700 text-white border-angely-purple-700 font-bold shadow-xs"
-                            : "bg-angely-purple-50/60 text-angely-purple-900 border-angely-purple-200/70 hover:bg-angely-purple-100"
+                            : "bg-angely-purple-50/60 text-angely-purple-900 border-angely-purple-200/70 hover:bg-angely-purple-100",
                         )}
                       >
                         {label} niños
@@ -321,6 +342,26 @@ export function QuickQuoteForm() {
                     </option>
                   ))}
                 </Select>
+              </div>
+
+              {/* Especificaciones adicionales (Opcional) */}
+              <div className="space-y-1.5 sm:col-span-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="extra-notes" className="text-xs sm:text-sm">
+                    Especificaciones adicionales
+                  </Label>
+                  <span className="text-[11px] text-foreground/50 font-medium">
+                    (Opcional)
+                  </span>
+                </div>
+                <Textarea
+                  id="extra-notes"
+                  placeholder="Ej. Temática deseada, personajes favoritos, si el local es abierto o cerrado, requerimientos especiales..."
+                  value={extraNotes}
+                  onChange={(e) => setExtraNotes(e.target.value)}
+                  rows={3}
+                  className="min-h-[80px] sm:min-h-[90px] text-xs sm:text-sm resize-none"
+                />
               </div>
 
               <Button

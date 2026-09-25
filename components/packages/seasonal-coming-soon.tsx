@@ -56,7 +56,7 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
         description: "Cupos limitados para eventos en noviembre y diciembre.",
       },
     ],
-    ctaText: "Consultar reservas de Navidad por WhatsApp",
+    ctaText: "Consultar reservas de Navidad",
     whatsappMessage:
       "Hola Anggelykids! 👋 Quisiera información anticipada y consultar disponibilidad para los paquetes navideños 🎄✨",
     badgeClass:
@@ -258,7 +258,7 @@ export function SeasonalComingSoon({
   return (
     <div
       className={cn(
-        "relative mx-auto w-full max-w-4xl overflow-hidden rounded-3xl border-2 border-angely-purple-200/60 bg-white/95 p-6 sm:p-10 lg:p-12 shadow-playful backdrop-blur-sm text-center",
+        "relative mx-auto w-full max-w-[340px] sm:max-w-lg overflow-hidden rounded-3xl border-2 border-angely-purple-200/60 bg-white/95 p-6 sm:p-10 lg:p-12 shadow-playful backdrop-blur-sm text-center",
         className,
       )}
     >
@@ -329,12 +329,12 @@ export function SeasonalComingSoon({
       )}
 
       {/* Llamado a la acción (WhatsApp) */}
-      <div className="flex flex-col items-center justify-center gap-3 pt-2">
+      <div className="flex flex-col items-center justify-center gap-3 pt-2 w-full max-w-[340px] sm:max-w-lg lg:max-w-5xl">
         <Button
           asChild
           variant="whatsapp"
           size="lg"
-          className="text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all"
+          className="text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all w-full"
         >
           <a
             href={whatsappUrl}

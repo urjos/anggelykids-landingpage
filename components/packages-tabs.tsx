@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Select } from "@/components/ui/select";
 import {
   Carousel,
   CarouselContent,
@@ -18,6 +20,8 @@ import {
 const CATEGORIES: PackageCategory[] = ["clasicos", "huntrix", "sensorial"];
 
 export function PackagesTabs() {
+  const [activeCategory, setActiveCategory] = useState<PackageCategory>("clasicos");
+
   return (
     <section id="paquetes" className="bg-angely-purple-50/50 py-10">
       <div className="container grid gap-5">
@@ -31,8 +35,31 @@ export function PackagesTabs() {
           </p>
         </div>
 
-        <Tabs defaultValue="clasicos" className="flex flex-col items-center">
-          <TabsList>
+        <Tabs
+          value={activeCategory}
+          onValueChange={(val) => setActiveCategory(val as PackageCategory)}
+          className="flex flex-col items-center w-full"
+        >
+          {/* Selector desplegable en pantallas pequeñas */}
+          <div className="w-full max-w-xs sm:hidden">
+            <Select
+              value={activeCategory}
+              onChange={(e) =>
+                setActiveCategory(e.target.value as PackageCategory)
+              }
+              className="font-bold text-angely-purple-900 border-2 border-primary/20 bg-white shadow-sm"
+              aria-label="Seleccionar categoría de paquetes"
+            >
+              {CATEGORIES.map((cat) => (
+                <option key={cat} value={cat}>
+                  {CATEGORY_LABELS[cat]}
+                </option>
+              ))}
+            </Select>
+          </div>
+
+          {/* Pestañas en pantallas medianas y grandes */}
+          <TabsList className="hidden sm:inline-flex">
             {CATEGORIES.map((cat) => (
               <TabsTrigger key={cat} value={cat}>
                 {CATEGORY_LABELS[cat]}

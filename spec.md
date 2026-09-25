@@ -1,63 +1,57 @@
 # SPEC.md — Anggelykids Shows y Eventos
 
-Especificación del negocio, tal como se conoce a partir de los materiales
-compartidos hasta ahora (banners de precios y logo). Este documento es la
-base para que completes/corrijas con lo que tú sabes del negocio y que no
-está en los flyers — cada sección marcada con **[COMPLETAR]** es un vacío
-conocido, no un dato inventado.
+Especificación del negocio Anggelykids — Shows y Eventos. Versión final,
+con la información de los flyers combinada con los datos confirmados
+directamente por el dueño del negocio.
 
 ## 1. Identidad del negocio
 
-| Campo               | Valor                                                                                                  |
-| ------------------- | ------------------------------------------------------------------------------------------------------ |
-| Nombre comercial    | Anggelykids — Shows y Eventos                                                                          |
-| Rubro               | Animación infantil temática y estimulación sensorial para fiestas                                      |
-| Zona de operación   | Lima (asumido por el formato de precios en Soles; **[COMPLETAR]** distritos/radio de cobertura exacto) |
-| Teléfono / WhatsApp | +51 957 189 685                                                                                        |
-| Facebook            | facebook.com/p/AnggelyKids-Shows-Eventos-100070584128490                                               |
-| Instagram           | instagram.com/anggelykids                                                                              |
-| Logo                | Dos versiones disponibles: fondo degradado pastel y fondo blanco (`anggelykids-logo`)                  |
+| Campo               | Valor                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------- |
+| Nombre comercial    | Anggelykids — Shows y Eventos                                                         |
+| Rubro               | Animación infantil temática y estimulación sensorial para fiestas                     |
+| Experiencia         | Más de 20 años en el rubro                                                            |
+| Zona de operación   | Lima y provincias aledañas (Huaral, Huacho, Cañete, entre otras)                      |
+| Equipo              | 12 personas en total (entre animadoras, personajes y sonidistas)                      |
+| Teléfono / WhatsApp | +51 957 189 685                                                                       |
+| Facebook            | facebook.com/p/AnggelyKids-Shows-Eventos-100070584128490                              |
+| Instagram           | instagram.com/anggelykids                                                             |
+| TikTok              | https://www.tiktok.com/@anggelykids.show?is_from_webapp=1&sender_device=pc            |
+| Logo                | Dos versiones disponibles: fondo degradado pastel y fondo blanco (`anggelykids-logo`) |
 
-**[COMPLETAR]:** razón social / RUC (si aplica para facturación), año de
-fundación, número de personal fijo vs. freelance por evento, si manejan
-zonas fuera de Lima con recargo.
+## 2. Propuesta de valor
 
-- Manejamos las zonas de Lima y provincias aledañas como Huaral, Huacho, Cañete, entre otras.
-- Contamos con un total de personal de 12 personas.
+- **Más de 20 años de experiencia** — es el principal argumento de
+  confianza frente a la competencia.
+- Diferenciador central: **disponibilidad, precios accesibles y
+  adaptabilidad** — no compiten por ser los más caros/exclusivos, sino por
+  poder resolver lo que el cliente necesite.
+- Animadoras caracterizadas "acorde a la temática" del cumpleaños, con
+  shows adaptados a series y películas del momento (catálogo vivo, se
+  renueva según tendencias — ej. la línea Huntrix / K-Pop Demon Hunters).
+- Se pueden pedir **canciones específicas** para la fiesta.
+- Dos grandes líneas de producto: **fiestas temáticas / personajes** y
+  **estimulación sensorial** — esta segunda pensada especialmente para
+  primeros añitos.
+- Piso común de todos los paquetes: animación con vestuario temático,
+  equipo de sonido, "rompe la piñata" y "Happy Birthday" cantado.
 
-## 2. Propuesta de valor (inferida de los flyers, no declarada explícitamente)
+## 3. Catálogo de paquetes
 
-- Animadoras caracterizadas "acorde a la temática" del cumpleaños.
-- Catálogo con dos grandes líneas de producto: **fiestas temáticas /
-  personajes** y **estimulación sensorial** (bandejas sensoriales, piscina
-  de pelotas, texturas) — esta segunda línea sugiere enfoque también en
-  primeros añitos / bebés, no solo niños en edad de fiesta temática clásica.
-- Una sub-línea con personaje con licencia/tendencia pop (Huntrix /
-  K-Pop Demon Hunters), separada del catálogo genérico — sugiere que
-  renuevan catálogo según tendencias del momento.
-- Todos los paquetes incluyen: animación con vestuario temático, equipo de
-  sonido, "rompe la piñata" y "Happy Birthday" cantado — son el piso común
-  de cualquier paquete.
-- Se puede pedir canciones especificas para la fiesta.
-- Más de 20 años de experiencia en el rubro.
-- Shows temáticos adaptados a las series y películas del momento.
-- La diferencia real frente a la competencia es la disponibilidad, la accesibilidad de precios y la adaptabilidad.
-  **[COMPLETAR]:** ¿cuál es el diferenciador real frente a la competencia
-  (otras animadoras en Lima)? ¿Años de experiencia, testimonios, número de
-  eventos realizados, alguna garantía o política de cancelación?
-
-## 3. Catálogo de paquetes (fuente: flyers compartidos)
+Precios **vigentes**. El catálogo técnico completo (inclusiones, obsequios
+y cortesías línea por línea) vive en `lib/packages-data.ts` del proyecto —
+esta tabla es el resumen para decisiones de negocio.
 
 ### 3.1 Shows Clásicos y Temáticos
 
-| Paquete             | Precio  | Duración | Destacado                                                            |
-| ------------------- | ------- | -------- | -------------------------------------------------------------------- |
-| Paquete Básico      | S/ 250  | 1h 30    | Animadora sola, sin bailarines/muñecos                               |
-| Mi Fiesta           | S/ 399  | 1h 30    | + 1 muñeco o bailarín, cortesía Túnel Mágico                         |
-| Super Fiesta        | S/ 559  | 2h       | + bailarín y muñeco, cortesía Encapsulador + Túnel                   |
-| Mega Fiesta         | S/ 699  | 2h       | 4 bailarines o 2 muñecos, cuenta cuentos con títeres                 |
-| Fiesta Premium      | S/ 899  | 2h 30    | 2 bailarines + 4 muñecos, Arlequín para hora loca                    |
-| Mega Fiesta Premium | S/ 1299 | 2h 30    | 6 bailarines + 4 muñecos, máquina de humo, equipo 15", "Más elegido" |
+| Paquete                 | Precio  | Duración | Destacado                                                                                                                |
+| ----------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Paquete Básico          | S/ 250  | 1h 30    | Animadora sola, sin bailarines/muñecos                                                                                   |
+| Mi Fiesta               | S/ 399  | 1h 30    | + 1 muñeco o bailarín, cortesía Túnel Mágico                                                                             |
+| Super Fiesta            | S/ 559  | 2h       | + bailarín y muñeco, cortesía Encapsulador + Túnel                                                                       |
+| Mega Fiesta             | S/ 699  | 2h       | 4 bailarines o 2 muñecos, cuenta cuentos con títeres                                                                     |
+| Fiesta Premium          | S/ 899  | 2h 30    | 2 bailarines + 4 muñecos, Arlequín para hora loca                                                                        |
+| **Mega Fiesta Premium** | S/ 1299 | 2h 30    | 6 bailarines + 4 muñecos, máquina de humo, equipo 15" — **paquete estrella, el que más se quiere empujar en la landing** |
 
 ### 3.2 Especial Huntrix (temático K-Pop Demon Hunters)
 
@@ -69,101 +63,75 @@ zonas fuera de Lima con recargo.
 
 ### 3.3 Sensorial & Estimulación
 
-| Paquete                        | Precio | Duración | Destacado                                                  |
-| ------------------------------ | ------ | -------- | ---------------------------------------------------------- |
-| Sensorial Básico               | S/ 359 | 1h 30    | Bandeja sensorial simple, manta con pelotas                |
-| BurbuPack 1                    | S/ 359 | 1h 45    | Encapsulador de burbujas + mini hora loca                  |
-| BurbuPack 2                    | S/ 499 | 1h 45    | + bailarines/muñeco temático                               |
-| Sensorial Burbujas · Paquete 2 | S/ 599 | 1h 45    | Piscina de pelotas + 2 bandejas sensoriales                |
-| Sensorial Burbujas · Paquete 3 | S/ 859 | 2h 30    | 4 bandejas sensoriales + atriles de pintura, "Más elegido" |
+| Paquete                        | Precio | Duración | Destacado                                   |
+| ------------------------------ | ------ | -------- | ------------------------------------------- |
+| Sensorial Básico               | S/ 359 | 1h 30    | Bandeja sensorial simple, manta con pelotas |
+| BurbuPack 1                    | S/ 359 | 1h 45    | Encapsulador de burbujas + mini hora loca   |
+| BurbuPack 2                    | S/ 499 | 1h 45    | + bailarines/muñeco temático                |
+| Sensorial Burbujas · Paquete 2 | S/ 599 | 1h 45    | Piscina de pelotas + 2 bandejas sensoriales |
+| Sensorial Burbujas · Paquete 3 | S/ 859 | 2h 30    | 4 bandejas sensoriales + atriles de pintura |
 
-_(El detalle línea por línea de inclusiones/obsequios/cortesías de cada
-paquete ya vive en `lib/packages-data.ts` del proyecto — este spec resume
-para decisiones de negocio, no duplica el catálogo técnico completo.)_
+**Combinación de paquetes:** se pueden combinar dos paquetes en un mismo
+evento (ej. clásico + sensorial), pero el costo de esa combinación se
+cotiza aparte — no es una simple suma de precios de catálogo.
 
-**[COMPLETAR]:** ¿los precios de este spec siguen vigentes o hay una lista
-de precios más reciente? ¿Hay descuentos por temporada baja, por referido,
-o por combinar dos paquetes (ej. clásico + sensorial el mismo evento)?
+**Otras temáticas no listadas en los flyers:** baby showers, revelaciones
+de sexo, horas locas independientes, entre otras — el catálogo de flyers
+no es exhaustivo.
 
-- Siguen vigentes
-- Se pueden combinar paquetes, pero para ello se debe consultar el costo.
+## 4. Condiciones comerciales
 
-## 4. Condiciones comerciales observadas en todos los flyers
-
-- **"No incluye movilidad"** en absolutamente todos los paquetes — el
-  transporte se cotiza aparte.
-- En caso se quiera extender la duración del show se debe de consultar el costo adicional.
-- En caso de suspensión o cancelación la productora no se hace responsable por el cambio de fecha ni por el dinere adelantado.
-- Los pagos se realizan antes de comenzar el show.
-- Se aceptan los siguientes medios de pagos:
-  - Plin
-  - Yape
-  - Deposito
-  - Transferencia
-  - Efectivo
-  - POS (Indicar antes de realizar el servicio)
-- Las reservas solo se realizan con un adelanto y no es reembolsable.
-- Se debe reservar con anticipación. En caso se requiera de forma urgente se debe de consultar la disponibilidad.
-
-**[COMPLETAR]:**
-
-- ¿Cuánto cuesta la movilidad y cómo se calcula (por distrito, por km, tarifa plana)?
-- ¿Qué pasa si el evento se extiende más de lo contratado — hay hora extra cotizable?
-- ¿Requieren adelanto para reservar? ¿Qué porcentaje y cuándo se paga el resto?
-- ¿Política de cancelación o reprogramación?
-- ¿Aceptan pago con Yape/Plin/tarjeta, o solo efectivo/transferencia?
-- ¿Con cuánta anticipación mínima se debe reservar?
+- **Movilidad no incluida** en ningún paquete — se cotiza aparte. Este varia seguún el tipo de paquete, show y distancia.
+- **Hora extra:** si el evento se quiere extender más de lo contratado,
+  el costo adicional se consulta caso por caso, no hay tarifa fija publicada.
+- **Reservas:** se confirman únicamente con un adelanto, y **ese adelanto
+  no es reembolsable**.
+- **Anticipación:** se recomienda reservar con anticipación; para
+  fechas urgentes, se debe consultar disponibilidad directamente.
+- **Pago del saldo:** el pago completo se realiza **antes de que
+  comience el show** (no al final ni durante).
+- **Medios de pago aceptados:** Plin, Yape, depósito, transferencia,
+  efectivo y POS (el POS debe indicarse **antes** de contratar el
+  servicio, no se puede improvisar el día del evento).
+- **Cancelaciones/reprogramaciones:** si el evento se suspende o cancela,
+  la productora no se responsabiliza por el cambio de fecha ni por el
+  dinero ya adelantado.
 
 ## 5. Audiencia y contexto de uso
 
-- El público objetivo son padres de niños de 0 a 15 años.
-- Suelen cotizar padres de familia, salones/colegios y empresas.
-- Se manejan eventos de cumpleaños, baby showers, revelaciones de sexo, horas locas, etc.
-
-**[COMPLETAR]:** rango de edades por línea de producto (¿la línea
-sensorial es específicamente 0–3 años? ¿la línea Huntrix es para niños
-más grandes, 6–12?), si el público que cotiza suele ser el papá/mamá o
-también salones/colegios/empresas, y si manejan eventos corporativos
-además de cumpleaños.
+- **Público objetivo:** padres de familia con niños de **0 a 15 años** —
+  rango amplio, cubierto por las distintas líneas de producto (sensorial
+  para los más pequeños, temáticas/Huntrix para edades mayores).
+- **Quién cotiza:** no solo papás — también **salones/colegios y
+  empresas** cotizan directamente. La landing debería poder hablarle a
+  ambos perfiles, no asumir que todo lead es un padre individual.
+- **Tipos de evento:** cumpleaños, baby showers, revelaciones de sexo,
+  horas locas independientes, y en general cualquier celebración infantil
+  o familiar.
+- **Estacionalidad:** no hay una temporada alta marcada por fecha del
+  calendario (navidad _podría_ tener algo más de demanda, pero no es la
+  regla). La disponibilidad depende más de **qué animadoras están libres
+  ese día** que de la época del año — por lo tanto, se basa en disponibilidad real de
+  personal por fecha específica.
 
 ## 6. Estado actual del activo digital
 
 - Landing page (`anggelykids-landingpage`) construida en Next.js, con el
-  catálogo de la sección 3 cargado como datos.
-- Todo el contacto pasa por WhatsApp — no hay checkout ni pasarela de pago
-  integrada.
-- Presencia en Instagram y Facebook confirmada;
-- Nos encuentran en TikTok tambien.
+  catálogo de la sección 3 cargado como datos (`lib/packages-data.ts`).
+- Todo el contacto pasa por WhatsApp — no hay checkout ni pasarela de
+  pago integrada (coherente con la sección 4: el pago se coordina y
+  cobra directamente antes del show, no online).
+- Presencia confirmada en **Instagram**, **Facebook** y **TikTok**.
+- Hay **fotos y videos de mejor calidad** que los usados en los flyers
+  originales, disponibles para reemplazar el material actual de la
+  landing (pendiente de que el dueño los comparta).
+- Hay **testimonios de clientes reales**, citables desde Facebook o
+  WhatsApp — con potencial para una sección de prueba social en la
+  landing que hoy no existe.
 
-**[COMPLETAR]** si también
-están en TikTok (razonable dado el contenido de shows en video) o si
-usan alguna plataforma de reservas/calendario.
+## 7. Pendientes reales (lo único que sigue sin dato)
 
-## 7. Preguntas abiertas para ti (dueño del negocio)
-
-Esta sección es la que más vale la pena que completes — todo lo anterior
-sale de los flyers, esto no puede inferirse de ellos:
-
-1. ¿Qué te diferencia realmente de otras animadoras en Lima?
-
-- Tenemos más de 20 años de experiencia en el rubro, brindando calidad, buen servicio, confianza y precios accesibles.
-
-2. ¿Cuál es tu paquete más rentable / el que más quieres empujar en la landing?
-
-- El paquete Mega Fiesta Premium
-
-3. ¿Tienes fotos/video adicionales de mejor calidad que las de los flyers para la web?
-
-- Sí, tenemos fotos y videos de mejor calidad que los de los flyers.
-
-4. ¿Manejan otros idiomas/temáticas no listadas aquí (fuera de las que aparecen en los flyers)?
-
-- Sí, manejamos otras temáticas no listadas aquí, como baby showers, revelaciones de sexo, horas locas, etc.
-
-5. ¿Hay testimonios o reseñas de clientes que se puedan citar?
-
-- Sí, tenemos testimonios de clientes que se pueden citar de Facebook o Whatsapp.
-
-6. ¿Existe algún horario/temporada de alta demanda donde conviene mostrar urgencia ("quedan pocas fechas")?
-
-- Tal vez en navidad, pero no generalmente, esto depende más de la disponibilidad de animadoras que de fechas.
+1. **Fotos y videos de mejor calidad** — pendiente que el dueño los
+   comparta para reemplazar el material de los flyers en el sitio.
+2. **Testimonios concretos** (texto/capturas) a citar en una sección de
+   reseñas.

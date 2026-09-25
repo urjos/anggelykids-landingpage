@@ -47,7 +47,7 @@ export function Hero() {
       {/* Nubes cartoon animadas flotando en el fondo */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         {/* Nube 1: Flotando en la parte superior izquierda */}
-        <div className="absolute -top-2 sm:top-2 left-2 sm:left-10 w-28 sm:w-44 animate-cloud-float opacity-90 drop-shadow-[0_8px_16px_rgba(255,255,255,0.45)]">
+        <div className="absolute top-8 sm:top-8 left-2 sm:left-10 w-28 sm:w-44 animate-cloud-float opacity-90 drop-shadow-[0_8px_16px_rgba(255,255,255,0.45)]">
           <Image
             src={images.cloud1}
             alt="Nube cartoon decorativa"

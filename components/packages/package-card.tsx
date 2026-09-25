@@ -1,4 +1,4 @@
-import { Check, Clock, Gift, Sparkles, MessageCircle } from "lucide-react";
+import { Check, Clock, Gift, Sparkles } from "lucide-react";
 
 import {
   Card,
@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { cn, buildWhatsAppUrl, quotePackageMessage } from "@/lib/utils";
 import type { PartyPackage } from "@/constants/packages-data";
 
@@ -112,7 +113,7 @@ export function PackageCard({
       <CardFooter className="p-4 sm:p-6 pt-2 pb-5 sm:pb-6">
         <Button asChild variant="whatsapp" className="w-full text-sm">
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-            <MessageCircle className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
             Cotizar este paquete
           </a>
         </Button>

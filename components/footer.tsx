@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Facebook, Instagram, Phone } from "lucide-react";
 
 import { buildWhatsAppUrl } from "@/lib/utils";
+import TikTokIcon from "./icons/tiktok-icon";
 
 export function Footer() {
   const whatsappUrl = buildWhatsAppUrl(
@@ -67,6 +68,17 @@ export function Footer() {
                   className="hover:text-white transition-colors"
                 >
                   AnggelyKids Shows &amp; Eventos
+                </a>
+              </li>
+              <li className="flex items-center justify-start gap-2">
+                <TikTokIcon className="h-4 w-4 shrink-0 text-angely-pink-300" />
+                <a
+                  href="https://www.tiktok.com/@anggelykids.show?is_from_webapp=1&sender_device=pc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  @anggelykids.show
                 </a>
               </li>
             </ul>

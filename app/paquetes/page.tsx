@@ -1,5 +1,5 @@
+import { PackagesTabs } from "@/components/packages/packages-tabs";
 import type { Metadata } from "next";
-import { PackagesTabs } from "@/components/packages-tabs";
 
 export const metadata: Metadata = {
   title: "Paquetes y Precios | Anggelykids Shows y Eventos",

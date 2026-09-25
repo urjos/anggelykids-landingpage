@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
-import { Faq } from "@/components/faq";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/utils";
+import { Faq } from "@/components/faq/faq";
 
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes | Anggelykids Shows y Eventos",

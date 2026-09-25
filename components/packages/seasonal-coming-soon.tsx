@@ -3,7 +3,6 @@ import {
   Sparkles,
   Gift,
   Calendar,
-  MessageCircle,
   Sun,
   Ghost,
   Bell,
@@ -11,6 +10,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { buildWhatsAppUrl, cn } from "@/lib/utils";
 
 export interface SeasonalFeature {
@@ -33,7 +33,7 @@ export interface SeasonDetails {
 
 const SEASON_PRESETS: Record<string, SeasonDetails> = {
   navideños: {
-    badge: "🎄 Temporada Navideña",
+    badge: "Temporada Navideña",
     title: "¡Próximamente Paquetes Navideños!",
     subtitle: "La magia de la Navidad está por llegar a Anggelykids",
     description:
@@ -47,7 +47,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       {
         icon: Sparkles,
         title: "Dinámicas y Villancicos",
-        description: "Juegos participativos, canta juegos y hora loca navideña.",
+        description:
+          "Juegos participativos, canta juegos y hora loca navideña.",
       },
       {
         icon: Calendar,
@@ -60,7 +61,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       "Hola Anggelykids! 👋 Quisiera información anticipada y consultar disponibilidad para los paquetes navideños 🎄✨",
     badgeClass:
       "bg-emerald-50 text-emerald-700 border-emerald-200/80 shadow-sm",
-    accentBgClass: "from-emerald-50/40 via-angely-pink-50/30 to-angely-purple-50/30",
+    accentBgClass:
+      "from-emerald-50/40 via-angely-pink-50/30 to-angely-purple-50/30",
   },
   navidad: {
     badge: "🎄 Temporada Navideña",
@@ -77,7 +79,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       {
         icon: Sparkles,
         title: "Dinámicas y Villancicos",
-        description: "Juegos participativos, canta juegos y hora loca navideña.",
+        description:
+          "Juegos participativos, canta juegos y hora loca navideña.",
       },
       {
         icon: Calendar,
@@ -90,7 +93,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       "Hola Anggelykids! 👋 Quisiera información anticipada y consultar disponibilidad para los paquetes navideños 🎄✨",
     badgeClass:
       "bg-emerald-50 text-emerald-700 border-emerald-200/80 shadow-sm",
-    accentBgClass: "from-emerald-50/40 via-angely-pink-50/30 to-angely-purple-50/30",
+    accentBgClass:
+      "from-emerald-50/40 via-angely-pink-50/30 to-angely-purple-50/30",
   },
   verano: {
     badge: "☀️ Temporada de Verano",
@@ -107,7 +111,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       {
         icon: Sparkles,
         title: "Burbujas Gigantes",
-        description: "Espectáculo sensorial de burbujas y encapuchados mágicos.",
+        description:
+          "Espectáculo sensorial de burbujas y encapuchados mágicos.",
       },
       {
         icon: Calendar,
@@ -120,7 +125,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       "Hola Anggelykids! 👋 Quisiera más detalles sobre las propuestas de verano ☀️💦",
     badgeClass:
       "bg-angely-yellow-300/40 text-amber-900 border-angely-yellow-400/60 shadow-sm",
-    accentBgClass: "from-amber-50/50 via-angely-yellow-300/20 to-angely-purple-50/30",
+    accentBgClass:
+      "from-amber-50/50 via-angely-yellow-300/20 to-angely-purple-50/30",
   },
   halloween: {
     badge: "🎃 Especial Halloween",
@@ -148,8 +154,7 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
     ctaText: "Consultar sobre paquetes de Halloween",
     whatsappMessage:
       "Hola Anggelykids! 👋 Quisiera consultar sobre los paquetes temáticos de Halloween 🎃👻",
-    badgeClass:
-      "bg-purple-100 text-purple-900 border-purple-200 shadow-sm",
+    badgeClass: "bg-purple-100 text-purple-900 border-purple-200 shadow-sm",
     accentBgClass: "from-purple-100/40 via-angely-pink-50/30 to-amber-50/20",
   },
   default: {
@@ -162,7 +167,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       {
         icon: Sparkles,
         title: "Shows Temáticos",
-        description: "Animación personalizada según los gustos de tus pequeños.",
+        description:
+          "Animación personalizada según los gustos de tus pequeños.",
       },
       {
         icon: Gift,
@@ -180,7 +186,8 @@ const SEASON_PRESETS: Record<string, SeasonDetails> = {
       "Hola Anggelykids! 👋 Quisiera consultar sobre las próximas fechas y novedades 🎉",
     badgeClass:
       "bg-angely-pink-100 text-angely-pink-700 border-angely-pink-200 shadow-sm",
-    accentBgClass: "from-angely-purple-50/40 via-angely-pink-50/30 to-angely-yellow-300/20",
+    accentBgClass:
+      "from-angely-purple-50/40 via-angely-pink-50/30 to-angely-yellow-300/20",
   },
 };
 
@@ -236,8 +243,7 @@ export function SeasonalComingSoon({
   className,
 }: SeasonalComingSoonProps) {
   const normalizedSeason = season.toLowerCase().trim();
-  const preset =
-    SEASON_PRESETS[normalizedSeason] || SEASON_PRESETS.default;
+  const preset = SEASON_PRESETS[normalizedSeason] || SEASON_PRESETS.default;
 
   const displayBadge = badge ?? preset.badge;
   const displayTitle = title ?? preset.title;
@@ -245,8 +251,7 @@ export function SeasonalComingSoon({
   const displayDescription = description ?? preset.description;
   const displayHighlights = highlights ?? preset.highlights;
   const displayCtaText = ctaText ?? preset.ctaText;
-  const displayWhatsappMessage =
-    whatsappMessage ?? preset.whatsappMessage;
+  const displayWhatsappMessage = whatsappMessage ?? preset.whatsappMessage;
 
   const whatsappUrl = buildWhatsAppUrl(displayWhatsappMessage);
 
@@ -254,14 +259,15 @@ export function SeasonalComingSoon({
     <div
       className={cn(
         "relative mx-auto w-full max-w-4xl overflow-hidden rounded-3xl border-2 border-angely-purple-200/60 bg-white/95 p-6 sm:p-10 lg:p-12 shadow-playful backdrop-blur-sm text-center",
-        className
+        className,
       )}
     >
       {/* Fondo con degradado ambiental temático */}
       <div
         className={cn(
           "pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br opacity-80",
-          preset.accentBgClass || "from-angely-purple-50 via-white to-angely-pink-50"
+          preset.accentBgClass ||
+            "from-angely-purple-50 via-white to-angely-pink-50",
         )}
       />
 
@@ -274,7 +280,7 @@ export function SeasonalComingSoon({
         <Badge
           className={cn(
             "gap-1.5 px-4 py-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-wide",
-            preset.badgeClass
+            preset.badgeClass,
           )}
         >
           <Sparkles className="h-3.5 w-3.5 shrink-0" />
@@ -336,13 +342,10 @@ export function SeasonalComingSoon({
             rel="noopener noreferrer"
             className="flex items-center gap-2"
           >
-            <MessageCircle className="h-5 w-5" />
+            <WhatsAppIcon className="h-5 w-5" />
             {displayCtaText}
           </a>
         </Button>
-        <p className="text-xs text-foreground/60">
-          ✨ Consulta y asegura tu fecha preferida antes del lanzamiento oficial.
-        </p>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
+import { QuickQuoteForm } from "@/components/quoter/quick-quote-form";
 import type { Metadata } from "next";
-import { QuickQuoteForm } from "@/components/quick-quote-form";
 
 export const metadata: Metadata = {
   title: "Cotizador Rápido | Anggelykids Shows y Eventos",

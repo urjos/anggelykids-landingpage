@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-import { ValueProps } from "@/components/value-props";
+import { ValueProps } from "@/components/proposal/value-props";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {

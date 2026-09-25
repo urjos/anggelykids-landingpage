@@ -4,8 +4,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BusinessPolicies } from "@/components/business-policies";
+
 import { FAQS } from "@/constants/faqs";
+import { BusinessPolicies } from "./business-policies";
 
 export function Faq() {
   return (

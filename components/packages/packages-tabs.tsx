@@ -10,13 +10,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { PackageCard } from "@/components/package-card";
+
+import { SeasonalComingSoon } from "@/components/packages/seasonal-coming-soon";
 import {
   CATEGORY_LABELS,
   getPackagesByCategory,
   type PackageCategory,
 } from "@/constants/packages-data";
 import { CATEGORIES } from "@/constants/categories";
+import { PackageCard } from "./package-card";
 
 export function PackagesTabs() {
   const [activeCategory, setActiveCategory] =
@@ -67,32 +69,41 @@ export function PackagesTabs() {
             ))}
           </TabsList>
 
-          {CATEGORIES.map((cat) => (
-            <TabsContent key={cat} value={cat} className="w-full">
-              <div className="relative mx-auto max-w-[340px] sm:max-w-2xl lg:max-w-5xl px-11 sm:px-12 lg:px-14">
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: false,
-                  }}
-                  className="w-full"
-                >
-                  <CarouselContent className="-ml-4 py-4">
-                    {getPackagesByCategory(cat).map((pkg) => (
-                      <CarouselItem
-                        key={pkg.id}
-                        className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                      >
-                        <PackageCard pkg={pkg} className="w-full" />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="-left-10 sm:-left-10 lg:-left-12 h-8 w-8 sm:h-10 sm:w-10" />
-                  <CarouselNext className="-right-10 sm:-right-10 lg:-right-12 h-8 w-8 sm:h-10 sm:w-10" />
-                </Carousel>
-              </div>
-            </TabsContent>
-          ))}
+          {CATEGORIES.map((cat) => {
+            const packages = getPackagesByCategory(cat);
+            const isComingSoon = packages.length === 0;
+
+            return (
+              <TabsContent key={cat} value={cat} className="w-full">
+                {isComingSoon ? (
+                  <SeasonalComingSoon season={cat} />
+                ) : (
+                  <div className="relative mx-auto max-w-[340px] sm:max-w-2xl lg:max-w-5xl px-11 sm:px-12 lg:px-14">
+                    <Carousel
+                      opts={{
+                        align: "start",
+                        loop: false,
+                      }}
+                      className="w-full"
+                    >
+                      <CarouselContent className="-ml-4 py-4">
+                        {packages.map((pkg) => (
+                          <CarouselItem
+                            key={pkg.id}
+                            className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                          >
+                            <PackageCard pkg={pkg} className="w-full" />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="-left-10 sm:-left-10 lg:-left-12 h-8 w-8 sm:h-10 sm:w-10" />
+                      <CarouselNext className="-right-10 sm:-right-10 lg:-right-12 h-8 w-8 sm:h-10 sm:w-10" />
+                    </Carousel>
+                  </div>
+                )}
+              </TabsContent>
+            );
+          })}
         </Tabs>
       </div>
     </section>

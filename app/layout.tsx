@@ -4,7 +4,7 @@ import { Fredoka, Nunito } from "next/font/google";
 
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { WhatsAppFloatButton } from "@/components/whatsapp-float-button";
+import { WhatsAppFloatButton } from "@/components/icons/whatsapp-float-button";
 
 import "../global.css";
 

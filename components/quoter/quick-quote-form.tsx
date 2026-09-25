@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Send } from "lucide-react";
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -10,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/ui/form-error";
 import { PACKAGES } from "@/constants/packages-data";
 import { buildWhatsAppUrl } from "@/lib/utils";
-import Image from "next/image";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 
 function formatPhoneNumber(value: string) {
   let digits = value.replace(/\D/g, "");
@@ -171,13 +170,7 @@ export function QuickQuoteForm() {
                 size="lg"
                 className="w-full sm:col-span-2 h-auto min-h-[48px] sm:min-h-[54px] py-3.5 px-4 sm:px-6 text-sm sm:text-base font-bold whitespace-normal text-center shadow-lg active:scale-[0.98] mt-2"
               >
-                <Image
-                  src="/icons/whatsapp.png"
-                  alt="WhatsApp"
-                  width={30}
-                  height={30}
-                  className="object-contain brightness-0 invert"
-                />
+                <WhatsAppIcon size={24} className="h-6 w-6" />
                 <span>Enviar cotización</span>
               </Button>
             </form>

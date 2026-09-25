@@ -40,7 +40,11 @@
   body {
     @apply bg-background text-foreground font-body;
   }
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     @apply font-heading;
   }
 }
@@ -64,8 +68,9 @@
       theme("colors.angely.pink.300")
     );
     background-size: 300% 300%;
-    animation: hero-gradient-shift 12s ease-in-out infinite alternate,
-               hero-pulse 6s ease-in-out infinite alternate;
+    animation:
+      hero-gradient-shift 12s ease-in-out infinite alternate,
+      hero-pulse 6s ease-in-out infinite alternate;
   }
 }
 
@@ -94,20 +99,22 @@
 }
 
 @keyframes cloud-float-slow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-14px) rotate(1.2deg);
+    transform: translateY(-18px) rotate(1.2deg);
   }
 }
 
 @keyframes cloud-float-reverse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(12px) rotate(-1deg);
+    transform: translateY(16px) rotate(-1deg);
   }
 }
 

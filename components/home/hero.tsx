@@ -49,7 +49,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="gradient-hero relative overflow-hidden min-h-[620px] sm:min-h-[680px] lg:min-h-[580px] flex flex-col justify-start lg:justify-center pt-5 sm:pt-8 pb-0 lg:py-20"
+      className="gradient-hero relative overflow-hidden min-h-[620px] sm:min-h-[680px] lg:min-h-[580px] flex flex-col justify-start lg:justify-center pt-5 py-10 sm:pt-8 lg:py-20"
     >
       {/* Orbes de luz y color con animación pulsante */}
       <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-angely-yellow-300/60 blur-3xl animate-pulse" />
@@ -59,7 +59,7 @@ export function Hero() {
       {/* Nubes cartoon animadas flotando en el fondo */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         {/* Nube 1: Flotando en la parte superior izquierda */}
-        <div className="absolute top-8 sm:top-8 left-2 sm:left-10 w-28 sm:w-44 animate-cloud-float opacity-90 drop-shadow-[0_8px_16px_rgba(255,255,255,0.45)]">
+        <div className="absolute top-8 sm:top-8 left-2 sm:left-10 w-28 sm:w-44 animate-cloud-float opacity-80 drop-shadow-[0_8px_16px_rgba(255,255,255,0.45)]">
           <Image
             src={images.cloud1}
             alt="Nube cartoon decorativa"
@@ -69,7 +69,7 @@ export function Hero() {
         </div>
 
         {/* Nube 2: Flotando en la parte superior centro-derecha */}
-        <div className="absolute top-5 sm:top-8 right-1/4 sm:right-1/3 w-20 sm:w-36 animate-cloud-float-reverse opacity-80 drop-shadow-sm">
+        <div className="absolute top-20 sm:top-12 right-1/3 sm:right-1/2 w-20 sm:w-30 animate-cloud-float-reverse opacity-60 drop-shadow-sm">
           <Image
             src={images.cloud1}
             alt="Nube cartoon decorativa"

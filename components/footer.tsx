@@ -36,52 +36,44 @@ export function Footer() {
             <p className="font-heading text-sm font-extrabold uppercase tracking-wide text-angely-pink-300">
               Contacto
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-white/70">
-              <li className="flex items-center justify-start gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-angely-pink-300" />
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  +51 957 189 685
-                </a>
-              </li>
-              <li className="flex items-center justify-start gap-2">
-                <Instagram className="h-4 w-4 shrink-0 text-angely-pink-300" />
-                <a
-                  href="https://www.instagram.com/anggelykids/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  @anggelykids
-                </a>
-              </li>
-              <li className="flex items-center justify-start gap-2">
-                <Facebook className="h-4 w-4 shrink-0 text-angely-pink-300" />
-                <a
-                  href="https://www.facebook.com/p/AnggelyKids-Shows-Eventos-100070584128490/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  AnggelyKids Shows &amp; Eventos
-                </a>
-              </li>
-              <li className="flex items-center justify-start gap-2">
-                <TikTokIcon className="h-4 w-4 shrink-0 text-angely-pink-300" />
-                <a
-                  href="https://www.tiktok.com/@anggelykids.show?is_from_webapp=1&sender_device=pc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  @anggelykids.show
-                </a>
-              </li>
-            </ul>
+            <div className="flex items-center gap-3 mt-4">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-angely-pink-500 text-angely-pink-300 hover:text-white transition-all duration-200"
+              >
+                <Phone className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/anggelykids/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-angely-pink-500 text-angely-pink-300 hover:text-white transition-all duration-200"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/p/AnggelyKids-Shows-Eventos-100070584128490/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-angely-pink-500 text-angely-pink-300 hover:text-white transition-all duration-200"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@anggelykids.show?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-angely-pink-500 text-angely-pink-300 hover:text-white transition-all duration-200"
+              >
+                <TikTokIcon className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           {/* Columna 3: Información importante */}

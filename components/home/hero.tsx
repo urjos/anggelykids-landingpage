@@ -11,11 +11,23 @@ import { images } from "@/constants/images";
 
 const heroSlides = [
   {
-    src: "/images/caritas-pintadas.jpg",
+    src: images.caritasPintadas,
     title: "Caritas Pintadas Artísticas",
   },
   {
-    src: "/images/sensorial.jpg",
+    src: images.sensorial,
+    title: "Estimulación Sensorial Didáctica",
+  },
+  {
+    src: images.sensorial2,
+    title: "Estimulación Sensorial Didáctica",
+  },
+  {
+    src: images.sensorial3,
+    title: "Estimulación Sensorial Didáctica",
+  },
+  {
+    src: images.sensorial4,
     title: "Estimulación Sensorial Didáctica",
   },
 ];
@@ -97,7 +109,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 w-full lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-1/2 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_25%)]">
         {heroSlides.map((slide, index) => (
           <div
-            key={slide.src}
+            key={slide.src.src}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
               index === currentSlide
                 ? "opacity-100 scale-100"

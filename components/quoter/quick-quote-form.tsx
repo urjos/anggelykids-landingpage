@@ -238,14 +238,10 @@ export function QuickQuoteForm() {
 
                 {/* Acceso rápido a rangos frecuentes */}
                 <div className="flex flex-wrap items-center gap-1 pt-1">
-                  <span className="text-[10px] text-foreground/50 mr-0.5">
-                    Rápido:
-                  </span>
                   {[
                     { label: "1 a 3", min: 1, max: 3 },
                     { label: "4 a 7", min: 4, max: 7 },
                     { label: "8 a 12", min: 8, max: 12 },
-                    { label: "0 a 15", min: 0, max: 15 },
                   ].map((p) => {
                     const isSelected = minAge === p.min && maxAge === p.max;
                     return (
@@ -291,9 +287,7 @@ export function QuickQuoteForm() {
                 >
                   <option value="Menos de 10 niños">Menos de 10 niños</option>
                   <option value="10 a 15 niños">10 a 15 niños</option>
-                  <option value="15 a 25 niños">
-                    15 a 25 niños (Recomendado)
-                  </option>
+                  <option value="15 a 25 niños">15 a 25 niños</option>
                   <option value="25 a 35 niños">25 a 35 niños</option>
                   <option value="35 a 50 niños">35 a 50 niños</option>
                   <option value="Más de 50 niños">Más de 50 niños</option>
@@ -301,10 +295,7 @@ export function QuickQuoteForm() {
 
                 {/* Acceso rápido a opciones comunes */}
                 <div className="flex flex-wrap items-center gap-1 pt-1">
-                  <span className="text-[10px] text-foreground/50 mr-0.5">
-                    Rápido:
-                  </span>
-                  {["10 a 15", "15 a 25", "25 a 35", "+50"].map((label) => {
+                  {["10 a 15", "25 a 35", "+50"].map((label) => {
                     const fullVal =
                       label === "+50" ? "Más de 50 niños" : `${label} niños`;
                     const isSelected = childrenCount === fullVal;

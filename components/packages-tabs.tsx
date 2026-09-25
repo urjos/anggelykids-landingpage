@@ -15,12 +15,12 @@ import {
   CATEGORY_LABELS,
   getPackagesByCategory,
   type PackageCategory,
-} from "@/lib/packages-data";
-
-const CATEGORIES: PackageCategory[] = ["clasicos", "huntrix", "sensorial"];
+} from "@/constants/packages-data";
+import { CATEGORIES } from "@/constants/categories";
 
 export function PackagesTabs() {
-  const [activeCategory, setActiveCategory] = useState<PackageCategory>("clasicos");
+  const [activeCategory, setActiveCategory] =
+    useState<PackageCategory>("clasicos");
 
   return (
     <section id="paquetes" className="bg-angely-purple-50/50 py-10">

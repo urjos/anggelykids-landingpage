@@ -9,7 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn, buildWhatsAppUrl, quotePackageMessage } from "@/lib/utils";
-import type { PartyPackage } from "@/lib/packages-data";
+import type { PartyPackage } from "@/constants/packages-data";
 
 export function PackageCard({
   pkg,
@@ -94,7 +94,10 @@ export function PackageCard({
           </div>
           <ul className="space-y-1">
             {pkg.gifts.map((item) => (
-              <li key={item} className="text-xs sm:text-sm text-angely-purple-900/80">
+              <li
+                key={item}
+                className="text-xs sm:text-sm text-angely-purple-900/80"
+              >
                 • {item}
               </li>
             ))}

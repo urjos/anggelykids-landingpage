@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/ui/form-error";
-import { PACKAGES } from "@/lib/packages-data";
+import { PACKAGES } from "@/constants/packages-data";
 import { buildWhatsAppUrl } from "@/lib/utils";
 import Image from "next/image";
 

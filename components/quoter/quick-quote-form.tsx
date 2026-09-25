@@ -179,11 +179,6 @@ export function QuickQuoteForm() {
                   <Label htmlFor="min-age" className="text-xs sm:text-sm">
                     Rango de edad
                   </Label>
-                  <span className="text-[11px] font-bold text-angely-pink-600 bg-angely-pink-50 border border-angely-pink-200/60 px-2 py-0.5 rounded-full">
-                    {minAge === maxAge
-                      ? `${minAge} ${minAge === 1 ? "año" : "años"}`
-                      : `${minAge} a ${maxAge} años`}
-                  </span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
@@ -275,9 +270,6 @@ export function QuickQuoteForm() {
                   >
                     Cantidad de niños
                   </Label>
-                  <span className="text-[11px] font-bold text-angely-purple-700 bg-angely-purple-50 border border-angely-purple-200/60 px-2 py-0.5 rounded-full">
-                    {childrenCount}
-                  </span>
                 </div>
 
                 <Select

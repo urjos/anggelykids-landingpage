@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { buildWhatsAppUrl } from "@/lib/utils";
+import { images } from "@/constants/images";
 
 const heroSlides = [
   {
@@ -42,6 +43,55 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-angely-yellow-300/60 blur-3xl animate-pulse" />
       <div className="pointer-events-none absolute right-0 top-10 h-80 w-80 rounded-full bg-angely-teal-300/50 blur-3xl animate-pulse [animation-duration:5s]" />
       <div className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-angely-pink-300/50 blur-3xl animate-pulse [animation-duration:7s]" />
+
+      {/* Nubes cartoon animadas flotando en el fondo */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+        {/* Nube 1: Flotando en la parte superior izquierda */}
+        <div className="absolute -top-2 sm:top-2 left-2 sm:left-10 w-28 sm:w-44 animate-cloud-float opacity-90 drop-shadow-[0_8px_16px_rgba(255,255,255,0.45)]">
+          <Image
+            src={images.cloud1}
+            alt="Nube cartoon decorativa"
+            className="w-full h-auto object-contain select-none"
+            priority
+          />
+        </div>
+
+        {/* Nube 2: Flotando en la parte superior centro-derecha */}
+        <div className="absolute top-5 sm:top-8 right-1/4 sm:right-1/3 w-20 sm:w-36 animate-cloud-float-reverse opacity-80 drop-shadow-sm">
+          <Image
+            src={images.cloud1}
+            alt="Nube cartoon decorativa"
+            className="w-full h-auto object-contain select-none"
+          />
+        </div>
+
+        {/* Nube 3: Nube flotante intermedia hacia la izquierda */}
+        <div className="hidden sm:block absolute bottom-28 left-1/4 w-28 sm:w-36 animate-cloud-float-delayed opacity-75 drop-shadow-sm">
+          <Image
+            src={images.cloud1}
+            alt="Nube cartoon decorativa"
+            className="w-full h-auto object-contain select-none"
+          />
+        </div>
+
+        {/* Nube 4: Nube viajera lenta que cruza de fondo */}
+        <div className="absolute top-1/4 left-0 w-32 sm:w-48 animate-cloud-drift opacity-40">
+          <Image
+            src={images.cloud1}
+            alt="Nube cartoon decorativa"
+            className="w-full h-auto object-contain select-none"
+          />
+        </div>
+
+        {/* Nube 5: Segunda nube viajera diferida */}
+        <div className="hidden lg:block absolute bottom-12 left-0 w-40 animate-cloud-drift-slow opacity-30">
+          <Image
+            src={images.cloud1}
+            alt="Nube cartoon decorativa"
+            className="w-full h-auto object-contain select-none"
+          />
+        </div>
+      </div>
 
       {/* Carrusel como fondo: mitad vertical en móvil (inferior) y mitad horizontal en computadora (derecha) */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 w-full lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-1/2 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_25%)]">

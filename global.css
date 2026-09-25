@@ -92,3 +92,50 @@
     filter: brightness(0.98) saturate(1.05);
   }
 }
+
+@keyframes cloud-float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.2deg);
+  }
+}
+
+@keyframes cloud-float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-1deg);
+  }
+}
+
+@keyframes cloud-drift-across {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(105vw);
+  }
+}
+
+.animate-cloud-float {
+  animation: cloud-float-slow 7s ease-in-out infinite;
+}
+
+.animate-cloud-float-delayed {
+  animation: cloud-float-slow 8.5s ease-in-out 1.5s infinite;
+}
+
+.animate-cloud-float-reverse {
+  animation: cloud-float-reverse 9s ease-in-out infinite;
+}
+
+.animate-cloud-drift {
+  animation: cloud-drift-across 42s linear infinite;
+}
+
+.animate-cloud-drift-slow {
+  animation: cloud-drift-across 60s linear 10s infinite;
+}

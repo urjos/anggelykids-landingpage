@@ -10,11 +10,11 @@ export function Footer() {
   );
 
   return (
-    <footer className="bg-angely-purple-900 py-8 sm:py-10 text-white">
-      <div className="container max-w-5xl mx-auto">
-        <div className="grid gap-8  lg:grid-cols-3 items-start justify-center text-center">
+    <footer className="bg-angely-purple-900 py-2 sm:py-6 text-white">
+      <div className="container max-w-5xl mx-auto grid gap-2">
+        <div className="grid gap-5 lg:grid-cols-3 items-start justify-center text-center">
           {/* Columna 1: Logo y descripción */}
-          <div className="flex flex-col items-center text-start max-w-xs">
+          <div className="hidden sm:flex flex-col items-center text-start max-w-xs gap-1">
             <div className="rounded-2xl p-2 shadow-sm inline-block">
               <Image
                 src="/logo.png"
@@ -25,18 +25,18 @@ export function Footer() {
                 quality={95}
               />
             </div>
-            <p className="mt-3 text-sm text-white/70">
+            <p className="text-sm text-white/70">
               Shows infantiles temáticos y estimulación sensorial en Lima.
-              Hacemos de cada fiesta un recuerdo inolvidable.
+              Hacemos de cada fiesta un momento inolvidable.
             </p>
           </div>
 
           {/* Columna 2: Contacto */}
-          <div className="flex flex-col items-start text-start max-w-xs">
+          <div className="flex flex-col items-start text-start max-w-xs gap-1">
             <p className="font-heading text-sm font-extrabold uppercase tracking-wide text-angely-pink-300">
               Contacto
             </p>
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center gap-3">
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -77,11 +77,11 @@ export function Footer() {
           </div>
 
           {/* Columna 3: Información importante */}
-          <div className="flex flex-col items-start text-start max-w-xs">
+          <div className="flex flex-col items-start text-start max-w-xs gap-1">
             <p className="font-heading text-sm font-extrabold uppercase tracking-wide text-angely-pink-300">
               Importante
             </p>
-            <p className="mt-4 text-sm text-white/70">
+            <p className="text-sm text-white/70">
               Todos los paquetes tienen duración específica y{" "}
               <span className="font-bold text-white">
                 no incluyen movilidad
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 sm:mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/50">
+        <div className="border-t border-white/10 pt-3 mt-4 text-center text-xs text-white/50">
           © {new Date().getFullYear()} Anggelykids Shows y Eventos. Todos los
           derechos reservados.
         </div>

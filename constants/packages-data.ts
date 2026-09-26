@@ -1,3 +1,5 @@
+import { images } from "./images";
+
 export type PackageCategory =
   | "clasicos"
   | "huntrix"
@@ -55,6 +57,8 @@ export const PACKAGES: PartyPackage[] = [
     ],
     primaryColor: "#F9B7F4",
     secondaryColor: "#FFDE5D",
+    image1: images.basico,
+    image2: images.basico2,
   },
   {
     id: "mi-fiesta",
@@ -84,6 +88,8 @@ export const PACKAGES: PartyPackage[] = [
     courtesy: ["Túnel Mágico"],
     primaryColor: "#8FDEE5",
     secondaryColor: "#FFDE5D",
+    image1: images.mifiesta,
+    image2: images.mifiesta2,
   },
   {
     id: "super-fiesta",
@@ -179,6 +185,7 @@ export const PACKAGES: PartyPackage[] = [
     ],
     primaryColor: "#FF74E9",
     secondaryColor: "#FDDF5D",
+    image1: images.fiestaPremium,
   },
   {
     id: "mega-fiesta-premium",

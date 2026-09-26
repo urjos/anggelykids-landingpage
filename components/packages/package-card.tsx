@@ -216,7 +216,7 @@ export function PackageCard({
             {/* Title */}
             <div>
               <h3
-                className="font-heading text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight"
+                className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight"
                 style={{
                   color: primary,
                   textShadow:
@@ -238,7 +238,7 @@ export function PackageCard({
                 }}
               >
                 <span
-                  className="font-heading font-black text-2xl sm:text-3xl tracking-tight"
+                  className="font-heading font-black text-3xl sm:text-4xl tracking-tight"
                   style={{
                     color: primary,
                     textShadow:
@@ -252,7 +252,7 @@ export function PackageCard({
               {/* Two Circular Photo Frames */}
               <div className="flex items-center justify-center -space-x-4 pt-1">
                 <div
-                  className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-[5px] shadow-lg bg-slate-100 shrink-0"
+                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-lg bg-slate-100 shrink-0 -mb-8 sm:-ml-10"
                   style={{ borderColor: primary }}
                 >
                   <Image
@@ -263,7 +263,7 @@ export function PackageCard({
                   />
                 </div>
                 <div
-                  className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-[5px] shadow-xl bg-slate-100 shrink-0 z-10"
+                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-xl bg-slate-100 shrink-0 z-10"
                   style={{ borderColor: primary }}
                 >
                   <Image

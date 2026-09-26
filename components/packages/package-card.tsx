@@ -163,12 +163,13 @@ export function PackageCard({
       )}
 
       {/* Decorative Wave & Bubbles at Top-Right */}
-      <div className="absolute top-0 right-0 pointer-events-none z-0 select-none overflow-hidden w-44 sm:w-60 md:w-72 h-40 sm:h-52">
+      <div className="absolute top-0 right-0 pointer-events-none z-0 select-none overflow-hidden w-28 sm:w-48 md:w-72 h-20 sm:h-36 md:h-52">
         <svg
           viewBox="0 0 320 220"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full object-cover"
+          preserveAspectRatio="xMaxYMin meet"
+          className="w-full h-full"
           aria-hidden="true"
         >
           {/* Secondary color wave */}
@@ -176,18 +177,20 @@ export function PackageCard({
             d="M60 0 C120 40 180 20 220 50 C260 80 250 140 320 160 L320 0 Z"
             fill={secondary}
           />
-          {/* Floating decorative bubbles in primary color */}
-          <circle cx="105" cy="70" r="15" fill={primary} fillOpacity="0.9" />
-          <circle cx="65" cy="45" r="11" fill={primary} fillOpacity="0.85" />
-          <circle cx="145" cy="30" r="8" fill={primary} fillOpacity="0.8" />
-          <circle cx="175" cy="85" r="6" fill={primary} fillOpacity="0.75" />
+          {/* Floating decorative bubbles in primary color - only shown on desktop to prevent collision with title */}
+          <g className="hidden md:inline">
+            <circle cx="105" cy="70" r="15" fill={primary} fillOpacity="0.9" />
+            <circle cx="65" cy="45" r="11" fill={primary} fillOpacity="0.85" />
+            <circle cx="145" cy="30" r="8" fill={primary} fillOpacity="0.8" />
+            <circle cx="175" cy="85" r="6" fill={primary} fillOpacity="0.75" />
+          </g>
         </svg>
       </div>
 
       {/* Decorative Wave & Accent at Bottom */}
-      <div className="absolute -bottom-1 left-0 right-0 pointer-events-none z-0 select-none overflow-hidden h-20 sm:h-24 md:h-28">
+      <div className="absolute -bottom-1 left-0 right-0 pointer-events-none z-0 select-none overflow-hidden h-60">
         <svg
-          viewBox="0 0 800 140"
+          viewBox="0 0 600 120"
           preserveAspectRatio="none"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -209,14 +212,14 @@ export function PackageCard({
       </div>
 
       {/* Card Body */}
-      <div className="relative z-10 p-5 sm:p-7 md:p-8 flex flex-col flex-1">
+      <div className="relative z-10 p-4 sm:p-6 md:p-8 flex flex-col flex-1">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start flex-1">
           {/* LEFT COLUMN: Title, Includes, Obsequios, Meta */}
           <div className="md:col-span-7 flex flex-col space-y-4">
             {/* Title */}
             <div>
               <h3
-                className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight"
+                className="font-heading text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight"
                 style={{
                   color: primary,
                   textShadow:
@@ -252,7 +255,7 @@ export function PackageCard({
               {/* Two Circular Photo Frames */}
               <div className="flex items-center justify-center -space-x-4 pt-1">
                 <div
-                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-lg bg-slate-100 shrink-0 -mb-8 sm:-ml-10"
+                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-lg bg-slate-100 shrink-0"
                   style={{ borderColor: primary }}
                 >
                   <Image

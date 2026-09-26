@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="bg-angely-purple-900 py-2 sm:py-6 text-white">
       <div className="container max-w-5xl mx-auto grid gap-2">
-        <div className="grid gap-5 lg:grid-cols-3 items-start justify-center text-center">
+        <div className="grid gap-5 lg:grid-cols-3 items-start justify-center text-center py-4">
           {/* Columna 1: Logo y descripción */}
           <div className="hidden sm:flex flex-col items-center text-start max-w-xs gap-1">
             <div className="rounded-2xl p-2 shadow-sm inline-block">
@@ -33,7 +33,7 @@ export function Footer() {
 
           {/* Columna 2: Contacto */}
           <div className="flex flex-col items-start text-start max-w-xs gap-1">
-            <p className="font-heading text-sm font-extrabold uppercase tracking-wide text-angely-pink-300">
+            <p className="font-heading text-xs font-extrabold uppercase tracking-wide text-angely-pink-300">
               Contacto
             </p>
             <div className="flex items-center gap-3">
@@ -78,10 +78,10 @@ export function Footer() {
 
           {/* Columna 3: Información importante */}
           <div className="flex flex-col items-start text-start max-w-xs gap-1">
-            <p className="font-heading text-sm font-extrabold uppercase tracking-wide text-angely-pink-300">
+            <p className="font-heading text-xs font-extrabold uppercase tracking-wide text-angely-pink-300">
               Importante
             </p>
-            <p className="text-sm text-white/70">
+            <p className="text-xs text-white/70">
               Todos los paquetes tienen duración específica y{" "}
               <span className="font-bold text-white">
                 no incluyen movilidad

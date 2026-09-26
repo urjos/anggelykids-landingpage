@@ -15,6 +15,10 @@ export interface PartyPackage {
   gifts: string[];
   courtesy?: string[];
   featured?: boolean;
+  primaryColor?: string;
+  secondaryColor?: string;
+  image1?: any;
+  image2?: any;
 }
 
 export const CATEGORY_LABELS: Record<PackageCategory, string> = {
@@ -49,6 +53,8 @@ export const PACKAGES: PartyPackage[] = [
       "Bazooka de burbujas",
       "Bombarda",
     ],
+    primaryColor: "#F9B7F4",
+    secondaryColor: "#FFDE5D",
   },
   {
     id: "mi-fiesta",
@@ -76,6 +82,8 @@ export const PACKAGES: PartyPackage[] = [
       "AnggelyStickers para nombres",
     ],
     courtesy: ["Túnel Mágico"],
+    primaryColor: "#8FDEE5",
+    secondaryColor: "#FFDE5D",
   },
   {
     id: "super-fiesta",
@@ -104,6 +112,8 @@ export const PACKAGES: PartyPackage[] = [
       "AnggelyStickers para nombre",
     ],
     courtesy: ["Encapsulador de burbujas", "Túnel Mágico"],
+    primaryColor: "#F2CB66",
+    secondaryColor: "#FFDE5D",
   },
   {
     id: "mega-fiesta",
@@ -132,6 +142,8 @@ export const PACKAGES: PartyPackage[] = [
       "Cuenta cuentos con títeres",
     ],
     courtesy: ["Túnel Mágico", "2 Bombardas", "Pitos y matracas"],
+    primaryColor: "#A7D85A",
+    secondaryColor: "#FFDE5D",
   },
   {
     id: "fiesta-premium",
@@ -165,6 +177,8 @@ export const PACKAGES: PartyPackage[] = [
       "Cañón lanza confetti",
       "Cuenta cuentos con títeres",
     ],
+    primaryColor: "#FF74E9",
+    secondaryColor: "#FDDF5D",
   },
   {
     id: "mega-fiesta-premium",
@@ -200,6 +214,8 @@ export const PACKAGES: PartyPackage[] = [
     ],
     courtesy: ["Túnel Mágico", "Cañón lanza confetti"],
     featured: true,
+    primaryColor: "#FFCE4B",
+    secondaryColor: "#E6FE5E",
   },
 
   // ---------- ESPECIAL HUNTRIX ----------
@@ -310,6 +326,8 @@ export const PACKAGES: PartyPackage[] = [
       "Bazooka de burbujas",
       "Piso para juegos",
     ],
+    primaryColor: "#EE97BA",
+    secondaryColor: "#F5B6C7",
   },
   {
     id: "sensorial-burbujas-2",
@@ -334,6 +352,8 @@ export const PACKAGES: PartyPackage[] = [
       "Cantamos Cumpleaños Feliz",
     ],
     gifts: ["Bazooka de burbujas", "Piso para juegos", "Túnel Mágico"],
+    primaryColor: "#96CDE9",
+    secondaryColor: "#B6D7F1",
   },
   {
     id: "sensorial-burbujas-3",
@@ -364,6 +384,8 @@ export const PACKAGES: PartyPackage[] = [
       "Túnel Mágico",
     ],
     featured: true,
+    primaryColor: "#C3A6FF",
+    secondaryColor: "#D2C2EF",
   },
   {
     id: "burbupack-1",
@@ -389,6 +411,8 @@ export const PACKAGES: PartyPackage[] = [
       "Bazooka de burbujas",
       "Bombarda",
     ],
+    primaryColor: "#CFBFFE",
+    secondaryColor: "#FFDE5D",
   },
   {
     id: "burbupack-2",
@@ -415,6 +439,8 @@ export const PACKAGES: PartyPackage[] = [
       "Bazooka de burbujas",
       "Bombarda",
     ],
+    primaryColor: "#CFBFFE",
+    secondaryColor: "#FFDE5D",
   },
 ];
 

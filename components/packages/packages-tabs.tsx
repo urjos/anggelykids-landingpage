@@ -78,7 +78,7 @@ export function PackagesTabs() {
                 {isComingSoon ? (
                   <SeasonalComingSoon season={cat} />
                 ) : (
-                  <div className="relative mx-auto max-w-[340px] sm:max-w-2xl lg:max-w-5xl px-11 sm:px-12 lg:px-14">
+                  <div className="relative mx-auto max-w-[440px] sm:max-w-2xl lg:max-w-5xl px-11 sm:px-12 lg:px-14">
                     <Carousel
                       opts={{
                         align: "start",
@@ -90,7 +90,7 @@ export function PackagesTabs() {
                         {packages.map((pkg) => (
                           <CarouselItem
                             key={pkg.id}
-                            className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                            className="pl-4 basis-full"
                           >
                             <PackageCard pkg={pkg} className="w-full" />
                           </CarouselItem>

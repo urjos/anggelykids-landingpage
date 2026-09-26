@@ -78,7 +78,7 @@ export function PackagesTabs() {
                 {isComingSoon ? (
                   <SeasonalComingSoon season={cat} />
                 ) : (
-                  <div className="relative mx-auto w-full max-w-sm sm:max-w-2xl lg:max-w-4xl px-8 sm:px-12 lg:px-14">
+                  <div className="relative mx-auto max-w-[355px] sm:max-w-2xl lg:max-w-4xl px-11 sm:px-12 lg:px-14">
                     <Carousel
                       opts={{
                         align: "start",

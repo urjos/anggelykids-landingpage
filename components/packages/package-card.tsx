@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { Clock, Gift, Sparkles, Car } from "lucide-react";
 
@@ -10,6 +13,11 @@ import {
   imagesHuntrixResources,
   imagesSensoriales,
 } from "@/constants/images";
+import {
+  ImageLightbox,
+  ExpandHint,
+  type LightboxItem,
+} from "./image-lightbox";
 
 export interface PackageCardProps {
   pkg: PartyPackage;
@@ -28,6 +36,10 @@ export function PackageCard({
   image1,
   image2,
 }: PackageCardProps) {
+  const [activeLightboxIndex, setActiveLightboxIndex] = useState<number | null>(
+    null,
+  );
+
   const whatsappUrl = buildWhatsAppUrl(
     quotePackageMessage(pkg.name, pkg.priceLabel),
   );
@@ -35,6 +47,15 @@ export function PackageCard({
   // ---------- HUNTRIX CARD: FAITHFUL TO THE OFFICIAL FLYER DESIGN ----------
   if (pkg.category === "huntrix") {
     const huntrixImage = image1 ?? pkg.image1 ?? imagesHuntrix.huntrixBasico;
+    const huntrixGallery: LightboxItem[] = huntrixImage
+      ? [
+          {
+            src: huntrixImage,
+            alt: `${pkg.name} fotografía`,
+            title: `${pkg.name} · Anggely Kids Shows`,
+          },
+        ]
+      : [];
 
     return (
       <div
@@ -276,15 +297,38 @@ export function PackageCard({
             <div className="md:col-span-5 flex flex-col items-center justify-start pt-2 md:pt-4">
               <div className="relative flex flex-col items-center w-full max-w-[280px]">
                 {/* CIRCULAR PHOTO FRAME (Apartado para colocar la imagen) */}
-                <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full p-1.5 sm:p-2 bg-gradient-to-tr from-purple-700 via-purple-500 to-fuchsia-500 shadow-[0_12px_32px_rgba(147,51,234,0.35)] transition-transform hover:scale-[1.03] duration-500">
+                <div
+                  className={cn(
+                    "relative w-44 h-44 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full p-1.5 sm:p-2 bg-gradient-to-tr from-purple-700 via-purple-500 to-fuchsia-500 shadow-[0_12px_32px_rgba(147,51,234,0.35)] transition-transform duration-300",
+                    huntrixImage && "cursor-pointer group hover:scale-[1.03]"
+                  )}
+                  onClick={() => {
+                    if (huntrixImage) setActiveLightboxIndex(0);
+                  }}
+                  role={huntrixImage ? "button" : undefined}
+                  tabIndex={huntrixImage ? 0 : undefined}
+                  onKeyDown={(e) => {
+                    if (huntrixImage && (e.key === "Enter" || e.key === " ")) {
+                      setActiveLightboxIndex(0);
+                    }
+                  }}
+                  aria-label={
+                    huntrixImage
+                      ? `Ver fotografía en tamaño completo de ${pkg.name}`
+                      : undefined
+                  }
+                >
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white bg-purple-100">
                     {huntrixImage ? (
-                      <Image
-                        src={huntrixImage}
-                        alt={`${pkg.name} fotografía`}
-                        fill
-                        className="object-cover"
-                      />
+                      <>
+                        <Image
+                          src={huntrixImage}
+                          alt={`${pkg.name} fotografía`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <ExpandHint />
+                      </>
                     ) : (
                       <div className="w-full h-full flex flex-col items-center justify-center text-purple-400 p-4 text-center">
                         <Sparkles className="h-8 w-8 mb-1 opacity-60" />
@@ -365,6 +409,14 @@ export function PackageCard({
             </div>
           </div>
         </div>
+
+        {/* Full-screen Image Lightbox for Huntrix */}
+        <ImageLightbox
+          images={huntrixGallery}
+          isOpen={activeLightboxIndex !== null}
+          onClose={() => setActiveLightboxIndex(null)}
+          initialIndex={activeLightboxIndex ?? 0}
+        />
       </div>
     );
   }
@@ -374,6 +426,19 @@ export function PackageCard({
   const secondary = secondaryColor ?? pkg.secondaryColor ?? "#FFDE5D";
   const img1 = image1 ?? pkg.image1 ?? imagesSensoriales.sensorial;
   const img2 = image2 ?? pkg.image2 ?? imagesSensoriales.sensorial2;
+
+  const packageGallery: LightboxItem[] = [
+    {
+      src: img1,
+      alt: `${pkg.name} fotografía 1`,
+      title: `${pkg.name} (Foto 1) · Anggely Kids Shows`,
+    },
+    {
+      src: img2,
+      alt: `${pkg.name} fotografía 2`,
+      title: `${pkg.name} (Foto 2) · Anggely Kids Shows`,
+    },
+  ];
 
   return (
     <div
@@ -488,26 +553,44 @@ export function PackageCard({
               {/* Two Circular Photo Frames */}
               <div className="flex items-center justify-center -space-x-4 pt-1">
                 <div
-                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-lg bg-slate-100 shrink-0"
+                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-lg bg-slate-100 shrink-0 cursor-pointer group transition-transform duration-300 hover:scale-105"
                   style={{ borderColor: primary }}
+                  onClick={() => setActiveLightboxIndex(0)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ")
+                      setActiveLightboxIndex(0);
+                  }}
+                  aria-label={`Ver primera foto de ${pkg.name} a pantalla completa`}
                 >
                   <Image
                     src={img1}
                     alt={`${pkg.name} imagen 1`}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <ExpandHint />
                 </div>
                 <div
-                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-xl bg-slate-100 shrink-0 z-10"
+                  className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[5px] shadow-xl bg-slate-100 shrink-0 z-10 cursor-pointer group transition-transform duration-300 hover:scale-105"
                   style={{ borderColor: primary }}
+                  onClick={() => setActiveLightboxIndex(1)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ")
+                      setActiveLightboxIndex(1);
+                  }}
+                  aria-label={`Ver segunda foto de ${pkg.name} a pantalla completa`}
                 >
                   <Image
                     src={img2}
                     alt={`${pkg.name} imagen 2`}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <ExpandHint />
                 </div>
               </div>
             </div>
@@ -641,33 +724,59 @@ export function PackageCard({
             <div className="relative flex flex-col items-center pt-2">
               {/* Circle 1 (Top) */}
               <div
-                className="relative w-36 h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden border-[6px] shadow-lg bg-slate-100 z-10"
+                className="relative w-36 h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden border-[6px] shadow-lg bg-slate-100 z-10 cursor-pointer group transition-transform duration-300 hover:scale-105"
                 style={{ borderColor: primary }}
+                onClick={() => setActiveLightboxIndex(0)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ")
+                    setActiveLightboxIndex(0);
+                }}
+                aria-label={`Ver primera foto de ${pkg.name} a pantalla completa`}
               >
                 <Image
                   src={img1}
                   alt={`${pkg.name} imagen 1`}
                   fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <ExpandHint />
               </div>
 
               {/* Circle 2 (Bottom, Overlapping) */}
               <div
-                className="relative w-36 h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden border-[6px] shadow-xl bg-slate-100 -mt-10 lg:-mt-12 ml-8 lg:ml-10 z-20"
+                className="relative w-36 h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden border-[6px] shadow-xl bg-slate-100 -mt-10 lg:-mt-12 ml-8 lg:ml-10 z-20 cursor-pointer group transition-transform duration-300 hover:scale-105"
                 style={{ borderColor: primary }}
+                onClick={() => setActiveLightboxIndex(1)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ")
+                    setActiveLightboxIndex(1);
+                }}
+                aria-label={`Ver segunda foto de ${pkg.name} a pantalla completa`}
               >
                 <Image
                   src={img2}
                   alt={`${pkg.name} imagen 2`}
                   fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <ExpandHint />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Full-screen Image Lightbox for other packages */}
+      <ImageLightbox
+        images={packageGallery}
+        isOpen={activeLightboxIndex !== null}
+        onClose={() => setActiveLightboxIndex(null)}
+        initialIndex={activeLightboxIndex ?? 0}
+      />
     </div>
   );
 }

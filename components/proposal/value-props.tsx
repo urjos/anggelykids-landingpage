@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { VALUE_PROPS } from "@/constants/value-props";
 import { LightOrbs } from "../ui/light-orbs";
+import { Sparkles } from "lucide-react";
 
 export function ValueProps() {
   return (
     <section id="propuesta" className="py-20">
-      <LightOrbs />
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl font-extrabold text-angely-purple-900 sm:text-4xl">
@@ -30,17 +30,14 @@ export function ValueProps() {
             </div>
           </div>
         </div>
-
         <div className="grid gap-6 lg:grid-cols-2">
           {VALUE_PROPS.map((item) => (
             <Card
               key={item.title}
-              className="border shadow-sm transition-transform hover:-translate-y-1 mx-auto max-w-lg"
+              className="border shadow-sm transition-transform hover:-translate-y-1 mx-auto max-w-md"
             >
               <CardContent className="flex gap-3 p-4">
-                <div
-                  className={`flex h-14 w-14 items-center justify-center rounded-2xl`}
-                >
+                <div className={`flex items-center`}>
                   <item.icon className="size-9" />
                 </div>
                 <div>

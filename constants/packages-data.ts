@@ -120,6 +120,8 @@ export const PACKAGES: PartyPackage[] = [
     courtesy: ["Encapsulador de burbujas", "Túnel Mágico"],
     primaryColor: "#F2CB66",
     secondaryColor: "#FFDE5D",
+    image1: images.superFiesta,
+    image2: images.superFiesta2,
   },
   {
     id: "mega-fiesta",
@@ -150,6 +152,8 @@ export const PACKAGES: PartyPackage[] = [
     courtesy: ["Túnel Mágico", "2 Bombardas", "Pitos y matracas"],
     primaryColor: "#A7D85A",
     secondaryColor: "#FFDE5D",
+    image1: images.megaFiesta,
+    image2: images.megaFiesta2,
   },
   {
     id: "fiesta-premium",
@@ -186,6 +190,7 @@ export const PACKAGES: PartyPackage[] = [
     primaryColor: "#FF74E9",
     secondaryColor: "#FDDF5D",
     image1: images.fiestaPremium,
+    image2: images.fiestaPremium2,
   },
   {
     id: "mega-fiesta-premium",
@@ -223,6 +228,8 @@ export const PACKAGES: PartyPackage[] = [
     featured: true,
     primaryColor: "#FFCE4B",
     secondaryColor: "#E6FE5E",
+    image1: images.megaFiestaPremium,
+    image2: images.megaFiestaPremium2,
   },
 
   // ---------- ESPECIAL HUNTRIX ----------

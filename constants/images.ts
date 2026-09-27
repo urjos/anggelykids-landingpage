@@ -9,6 +9,13 @@ import basico2 from "@/public/images/shows/infantiles/basico-2.jpg";
 import mifiesta from "@/public/images/shows/infantiles/mi-fiesta.jpg";
 import mifiesta2 from "@/public/images/shows/infantiles/mi-fiesta-2.jpg";
 import fiestaPremium from "@/public/images/shows/infantiles/fiesta-premium.jpg";
+import fiestaPremium2 from "@/public/images/shows/infantiles/fiesta-premium-2.jpg";
+import superFiesta from "@/public/images/shows/infantiles/super-fiesta.jpg";
+import superFiesta2 from "@/public/images/shows/infantiles/super-fiesta-2.jpg";
+import megaFiesta from "@/public/images/shows/infantiles/mega-fiesta.jpg";
+import megaFiesta2 from "@/public/images/shows/infantiles/mega-fiesta-2.jpg";
+import megaFiestaPremium from "@/public/images/shows/infantiles/mega-fiesta-premium.jpg";
+import megaFiestaPremium2 from "@/public/images/shows/infantiles/mega-fiesta-premium-2.jpg";
 
 export const images = {
   cloud1,
@@ -21,7 +28,14 @@ export const images = {
   basico2,
   mifiesta,
   mifiesta2,
+  superFiesta,
+  superFiesta2,
+  megaFiesta,
+  megaFiesta2,
   fiestaPremium,
+  fiestaPremium2,
+  megaFiestaPremium,
+  megaFiestaPremium2,
 } as const;
 
 export type ImageKey = keyof typeof images;

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { buildWhatsAppUrl } from "@/lib/utils";
-import { images } from "@/constants/images";
+import { images, imagesSensoriales } from "@/constants/images";
 
 const heroSlides = [
   {
@@ -15,19 +15,19 @@ const heroSlides = [
     title: "Caritas Pintadas Artísticas",
   },
   {
-    src: images.sensorial,
+    src: imagesSensoriales.sensorial,
     title: "Estimulación Sensorial Didáctica",
   },
   {
-    src: images.sensorial2,
+    src: imagesSensoriales.sensorial2,
     title: "Estimulación Sensorial Didáctica",
   },
   {
-    src: images.sensorial3,
+    src: imagesSensoriales.sensorial3,
     title: "Estimulación Sensorial Didáctica",
   },
   {
-    src: images.sensorial4,
+    src: imagesSensoriales.sensorial4,
     title: "Estimulación Sensorial Didáctica",
   },
 ];

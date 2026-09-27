@@ -16,14 +16,19 @@ import megaFiesta from "@/public/images/shows/infantiles/mega-fiesta.jpg";
 import megaFiesta2 from "@/public/images/shows/infantiles/mega-fiesta-2.jpg";
 import megaFiestaPremium from "@/public/images/shows/infantiles/mega-fiesta-premium.jpg";
 import megaFiestaPremium2 from "@/public/images/shows/infantiles/mega-fiesta-premium-2.jpg";
+import discoBallDecoration from "@/public/images/resources/huntrix/huntrix-decoration.png";
+import girlsBackground from "@/public/images/resources/huntrix/huntrix-girls-background.png";
+import title from "@/public/images/resources/huntrix/huntrix-title.png";
+import sparks from "@/public/images/resources/huntrix/huntrix-sparks.png";
+import huntrixBasico from "@/public/images/shows/huntrix/huntrix-basico.jpg";
+import huntrixFlyer from "@/public/images/shows/huntrix/huntrix-1.png";
 
 export const images = {
   cloud1,
   caritasPintadas,
-  sensorial,
-  sensorial2,
-  sensorial3,
-  sensorial4,
+} as const;
+
+export const imagesInfantiles = {
   basico,
   basico2,
   mifiesta,
@@ -38,4 +43,27 @@ export const images = {
   megaFiestaPremium2,
 } as const;
 
+export const imagesSensoriales = {
+  sensorial,
+  sensorial2,
+  sensorial3,
+  sensorial4,
+} as const;
+
+export const imagesHuntrix = {
+  huntrixBasico,
+  huntrixFlyer,
+} as const;
+
+export const imagesHuntrixResources = {
+  girlsBackground,
+  title,
+  discoBallDecoration,
+  sparks,
+} as const;
+
 export type ImageKey = keyof typeof images;
+export type ImageInfantilKey = keyof typeof imagesInfantiles;
+export type ImageSensorialKey = keyof typeof imagesSensoriales;
+export type ImageHuntrixKey = keyof typeof imagesHuntrix;
+export type ImageHuntrixResourcesKey = keyof typeof imagesHuntrixResources;

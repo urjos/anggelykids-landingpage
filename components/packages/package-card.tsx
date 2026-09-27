@@ -1,18 +1,15 @@
 import Image, { type StaticImageData } from "next/image";
-import { Check, Clock, Gift, Sparkles, Car } from "lucide-react";
+import { Clock, Gift, Sparkles, Car } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { cn, buildWhatsAppUrl, quotePackageMessage } from "@/lib/utils";
 import type { PartyPackage } from "@/constants/packages-data";
-import { images } from "@/constants/images";
+import {
+  imagesHuntrixResources,
+  imagesHuntrix,
+  imagesSensoriales,
+} from "@/constants/images";
 
 export interface PackageCardProps {
   pkg: PartyPackage;
@@ -35,112 +32,352 @@ export function PackageCard({
     quotePackageMessage(pkg.name, pkg.priceLabel),
   );
 
-  // ---------- HUNTRIX EXCEPTION: RETAIN DEDICATED / ORIGINAL DESIGN ----------
+  // ---------- HUNTRIX CARD: FAITHFUL TO THE OFFICIAL FLYER DESIGN ----------
   if (pkg.category === "huntrix") {
+    const huntrixImage =
+      image1 ??
+      pkg.image1 ??
+      imagesHuntrix.huntrixFlyer ??
+      imagesHuntrix.huntrixBasico;
+
     return (
-      <Card
+      <div
         className={cn(
-          "flex flex-col overflow-hidden transition-all duration-300",
+          "relative flex flex-col overflow-hidden rounded-[32px] sm:rounded-[42px] border-2 transition-all duration-300 shadow-xl",
           pkg.featured
-            ? "border-2 border-angely-pink-500 shadow-playful-pink"
-            : "border-border",
+            ? "border-purple-400 shadow-purple-500/25 ring-2 ring-purple-400/40"
+            : "border-purple-200/70 shadow-purple-200/20",
           className,
         )}
+        style={{
+          background:
+            "linear-gradient(180deg, #F8F2FF 0%, #FFF3FA 35%, #F5EEFF 70%, #F1E5FF 100%)",
+        }}
       >
+        {/* Subtle magical glow / aura */}
+        <div className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_50%_15%,rgba(244,114,182,0.18)_0%,transparent_50%),radial-gradient(circle_at_80%_40%,rgba(168,85,247,0.15)_0%,transparent_45%)]" />
+
+        {/* Featured Ribbon if active */}
         {pkg.featured && (
-          <div className="bg-angely-pink-500 py-1.5 text-center text-xs font-extrabold uppercase tracking-wide text-white">
-            Más elegido
+          <div className="relative z-30 bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 py-1.5 text-center text-xs font-black uppercase tracking-wider text-white shadow-sm">
+            ⭐ Paquete Más Elegido ⭐
           </div>
         )}
 
-        <CardHeader className="p-4 sm:p-6 pb-2 sm:pb-2">
-          <div className="flex items-start justify-between gap-3">
-            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-angely-purple-900">
-              {pkg.name}
-            </h3>
+        {/* TOP DECORATIONS: Disco Balls */}
+        {/* Top-Left Disco Ball */}
+        <div className="absolute -top-7 -left-7 sm:-top-10 sm:-left-10 w-28 h-28 sm:w-44 sm:h-44 md:w-52 md:h-52 pointer-events-none select-none z-10">
+          <Image
+            src={imagesHuntrixResources.discoBallDecoration}
+            alt="Disco ball"
+            fill
+            className="object-contain -rotate-12 drop-shadow-[0_8px_20px_rgba(147,51,234,0.3)]"
+          />
+        </div>
+
+        {/* Top-Right Disco Ball */}
+        <div className="absolute -top-7 -right-7 sm:-top-10 sm:-right-10 w-28 h-28 sm:w-44 sm:h-44 md:w-52 md:h-52 pointer-events-none select-none z-10">
+          <Image
+            src={imagesHuntrixResources.discoBallDecoration}
+            alt="Disco ball"
+            fill
+            className="object-contain rotate-12 drop-shadow-[0_8px_20px_rgba(147,51,234,0.3)]"
+          />
+        </div>
+
+        {/* Decorative Floating Sparks from imagesHuntrixResources */}
+        <div className="absolute top-28 right-4 sm:right-10 w-8 h-8 sm:w-12 sm:h-12 pointer-events-none select-none z-10 opacity-75 animate-pulse">
+          <Image
+            src={imagesHuntrixResources.sparks}
+            alt="Sparks"
+            fill
+            className="object-contain"
+          />
+        </div>
+        <div className="absolute top-[48%] left-3 sm:left-6 w-7 h-7 sm:w-10 sm:h-10 pointer-events-none select-none z-10 opacity-70">
+          <Image
+            src={imagesHuntrixResources.sparks}
+            alt="Sparks"
+            fill
+            className="object-contain -rotate-12"
+          />
+        </div>
+
+        {/* Floating 3D Music Notes (matching flyer aesthetic) */}
+        {/* Note top left */}
+        <div className="absolute top-20 sm:top-24 left-10 sm:left-24 w-6 h-6 sm:w-8 sm:h-8 pointer-events-none select-none z-10 opacity-85 rotate-[-15deg]">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            className="w-full h-full drop-shadow-[0_2px_6px_rgba(168,85,247,0.4)]"
+          >
+            <defs>
+              <linearGradient
+                id="notePinkPurp1"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stopColor="#E879F9" />
+                <stop offset="60%" stopColor="#C084FC" />
+                <stop offset="100%" stopColor="#818CF8" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M12 24a3 3 0 11-6 0 3 3 0 016 0zm14-4a3 3 0 11-6 0 3 3 0 016 0z"
+              fill="url(#notePinkPurp1)"
+            />
+            <path
+              d="M12 24V9l14-4v15M12 9l14-4"
+              stroke="url(#notePinkPurp1)"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        {/* Note middle */}
+        <div className="absolute top-[42%] right-[42%] hidden sm:block w-7 h-7 pointer-events-none select-none z-10 opacity-80 rotate-[12deg]">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            className="w-full h-full drop-shadow-[0_2px_6px_rgba(168,85,247,0.4)]"
+          >
+            <path
+              d="M12 24a3 3 0 11-6 0 3 3 0 016 0zm14-4a3 3 0 11-6 0 3 3 0 016 0z"
+              fill="url(#notePinkPurp1)"
+            />
+            <path
+              d="M12 24V9l14-4v15M12 9l14-4"
+              stroke="url(#notePinkPurp1)"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        {/* Note bottom left */}
+        <div className="absolute bottom-[28%] left-8 sm:left-14 w-6 h-6 sm:w-8 sm:h-8 pointer-events-none select-none z-10 opacity-80 rotate-[-10deg]">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            className="w-full h-full drop-shadow-[0_2px_6px_rgba(168,85,247,0.4)]"
+          >
+            <path
+              d="M12 24a3 3 0 11-6 0 3 3 0 016 0zm14-4a3 3 0 11-6 0 3 3 0 016 0z"
+              fill="url(#notePinkPurp1)"
+            />
+            <path
+              d="M12 24V9l14-4v15M12 9l14-4"
+              stroke="url(#notePinkPurp1)"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        {/* Note top right */}
+        <div className="absolute top-24 sm:top-28 right-14 sm:right-28 w-5 h-5 sm:w-7 sm:h-7 pointer-events-none select-none z-10 opacity-85 rotate-[20deg]">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            className="w-full h-full drop-shadow-[0_2px_6px_rgba(168,85,247,0.4)]"
+          >
+            <ellipse cx="10" cy="22" rx="4" ry="3" fill="url(#notePinkPurp1)" />
+            <path
+              d="M14 22V7c0 0 4-1 6 2"
+              stroke="url(#notePinkPurp1)"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+
+        {/* CENTER TOP: HUNTRIX TITLE & TIER BADGE */}
+        <div className="relative z-20 flex flex-col items-center pt-5 sm:pt-7 px-4">
+          <div className="relative w-44 sm:w-60 md:w-72 h-14 sm:h-18 md:h-20 drop-shadow-[0_4px_16px_rgba(168,85,247,0.35)] transition-transform hover:scale-105 duration-300">
+            <Image
+              src={imagesHuntrixResources.title}
+              alt="HUNTRIX"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="font-heading text-2xl sm:text-3xl font-extrabold text-angely-pink-600">
-              {pkg.priceLabel}
+          <div className="mt-1">
+            <span className="inline-block px-3 py-0.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-widest text-[#7C3AED] bg-white/80 border border-purple-200 shadow-sm">
+              {pkg.name}
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-foreground/60">
-            <Clock className="h-4 w-4" />
-            Duración: {pkg.duration}
-          </div>
-        </CardHeader>
+        </div>
 
-        <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0 pb-2">
-          <ul className="space-y-1.5 sm:space-y-2">
-            {pkg.includes.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-2 text-xs sm:text-sm text-foreground/80"
-              >
-                <Check className="mt-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-emerald-500" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          {pkg.courtesy && pkg.courtesy.length > 0 && (
-            <div>
-              <Badge variant="success" className="mb-1.5 sm:mb-2 text-xs">
-                <Sparkles className="h-3 w-3" />
-                Cortesía incluida
-              </Badge>
-              <ul className="space-y-1">
-                {pkg.courtesy.map((item) => (
-                  <li
-                    key={item}
-                    className="text-xs sm:text-sm font-semibold text-emerald-700"
-                  >
-                    • {item}
+        {/* MAIN BODY: 2-COLUMN LAYOUT */}
+        <div className="relative z-20 p-4 sm:p-6 md:p-8 pt-4 pb-2 flex-1">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            {/* LEFT COLUMN: Includes & Obsequio */}
+            <div className="md:col-span-7 flex flex-col space-y-4">
+              {/* Includes List */}
+              <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13.5px] text-[#24103B] font-semibold">
+                {pkg.includes.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="font-bold text-[#7E22CE] text-sm leading-none mt-0.5 select-none shrink-0">
+                      •
+                    </span>
+                    <span className="leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          )}
 
-          <div className="rounded-2xl bg-angely-purple-50 p-3.5 sm:p-4">
-            <div className="mb-1.5 sm:mb-2 flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-angely-purple-700">
-              <Gift className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              Obsequio
+              {/* OBSEQUIO Section */}
+              {pkg.gifts && pkg.gifts.length > 0 && (
+                <div className="pt-2 sm:pt-3">
+                  <h4
+                    className="font-heading font-black italic text-base sm:text-lg text-[#9333EA] tracking-wide mb-1.5 flex items-center gap-1.5 select-none"
+                    style={{
+                      textShadow:
+                        "1px 1px 0px rgba(255,255,255,0.8), 0 2px 4px rgba(147,51,234,0.15)",
+                    }}
+                  >
+                    <span>OBSEQUIO:</span>
+                  </h4>
+                  <ul className="space-y-1 text-xs sm:text-[13.5px] text-[#24103B] font-semibold">
+                    {pkg.gifts.map((gift) => (
+                      <li key={gift} className="flex items-start gap-2">
+                        <span className="font-bold text-[#9333EA] text-sm leading-none mt-0.5 select-none shrink-0">
+                          •
+                        </span>
+                        <span className="leading-snug">{gift}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Courtesy Section if available */}
+              {pkg.courtesy && pkg.courtesy.length > 0 && (
+                <div className="pt-1">
+                  <h4 className="font-heading font-black italic text-xs sm:text-sm text-emerald-600 tracking-wide mb-1 flex items-center gap-1">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    <span>Cortesía incluida:</span>
+                  </h4>
+                  <ul className="space-y-0.5 text-xs text-foreground/80 font-medium">
+                    {pkg.courtesy.map((c) => (
+                      <li key={c} className="flex items-start gap-1.5">
+                        <span className="text-emerald-500 font-bold">•</span>
+                        <span>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-            <ul className="space-y-1">
-              {pkg.gifts.map((item) => (
-                <li
-                  key={item}
-                  className="text-xs sm:text-sm text-angely-purple-900/80"
+
+            {/* RIGHT COLUMN: Circular Photo Frame + Overlapping White Price Ribbon Banner */}
+            <div className="md:col-span-5 flex flex-col items-center justify-start pt-2 md:pt-4">
+              <div className="relative flex flex-col items-center w-full max-w-[280px]">
+                {/* CIRCULAR PHOTO FRAME (Apartado para colocar la imagen) */}
+                <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full p-1.5 sm:p-2 bg-gradient-to-tr from-purple-700 via-purple-500 to-fuchsia-500 shadow-[0_12px_32px_rgba(147,51,234,0.35)] transition-transform hover:scale-[1.03] duration-500">
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white bg-purple-100">
+                    {huntrixImage ? (
+                      <Image
+                        src={huntrixImage}
+                        alt={`${pkg.name} fotografía`}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center text-purple-400 p-4 text-center">
+                        <Sparkles className="h-8 w-8 mb-1 opacity-60" />
+                        <span className="text-xs font-bold">
+                          Colocar imagen aquí
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* OVERLAPPING WHITE PRICE RIBBON (Matching flyer: Notch on left, bold pink price) */}
+                <div
+                  className="relative -mt-8 sm:-mt-10 md:-mt-12 -mr-6 sm:-mr-10 z-20 self-end bg-white py-2 sm:py-2.5 pl-8 sm:pl-10 pr-6 sm:pr-8 shadow-[0_8px_25px_rgba(0,0,0,0.14)] border-r-4 border-pink-400/40"
+                  style={{
+                    clipPath:
+                      "polygon(22px 0%, 100% 0%, 100% 100%, 22px 100%, 0% 50%)",
+                  }}
                 >
-                  • {item}
-                </li>
-              ))}
-            </ul>
+                  <div className="flex items-baseline gap-1 select-none">
+                    <span className="font-heading font-black text-2xl sm:text-3xl text-[#E11D9A] tracking-tight">
+                      s/
+                    </span>
+                    <span
+                      className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#FF1493] tracking-tight leading-none"
+                      style={{
+                        textShadow:
+                          "2px 2px 0px #fff, -2px -2px 0px #fff, 2px -2px 0px #fff, -2px 2px 0px #fff, 0px 4px 10px rgba(225, 29, 154, 0.35)",
+                      }}
+                    >
+                      {pkg.price}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM AREA: Huntrix Girls + Details (Duration, Mobility, Phone) + Anggely Kids Logo + WhatsApp CTA */}
+        <div className="relative mt-auto pt-6 sm:pt-8 pb-4 sm:pb-5 px-4 sm:px-8">
+          {/* Huntrix 3 Girls Background Image */}
+          <div className="relative w-full max-w-md sm:max-w-lg mx-auto h-40 sm:h-52 md:h-64 pointer-events-none select-none z-10 -mt-10 sm:-mt-14 md:-mt-18">
+            <Image
+              src={imagesHuntrixResources.girlsBackground}
+              alt="Personajes Huntrix"
+              fill
+              className="object-contain object-bottom drop-shadow-[0_10px_20px_rgba(0,0,0,0.18)]"
+            />
           </div>
 
-          <p className="text-[11px] sm:text-xs font-semibold text-foreground/50">
-            No incluye movilidad
-          </p>
-        </CardContent>
+          {/* Footer Bar: Details & CTA */}
+          <div className="relative z-20 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-purple-200/60 bg-white/50 backdrop-blur-sm rounded-2xl p-3 sm:p-4">
+            {/* Info details (Duration, Mobility, Phone) */}
+            <div className="flex flex-col space-y-1 text-xs sm:text-sm font-bold text-[#3B155B] w-full sm:w-auto text-left">
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-[#8B5CF6] shrink-0" />
+                <span>Duración: {pkg.duration}</span>
+              </div>
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs text-foreground/60">
+                <Car className="h-3.5 w-3.5 text-[#8B5CF6] shrink-0" />
+                <span>No incluye movilidad</span>
+              </div>
+            </div>
 
-        <CardFooter className="p-4 sm:p-6 pt-2 pb-5 sm:pb-6">
-          <Button asChild variant="whatsapp" className="w-full text-sm">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <WhatsAppIcon className="h-4 w-4" />
-              Cotizar este paquete
-            </a>
-          </Button>
-        </CardFooter>
-      </Card>
+            {/* CTA & Logo */}
+            <div className="flex items-center justify-center sm:justify-end gap-3 sm:gap-4 w-full sm:w-auto">
+              <Button
+                asChild
+                variant="whatsapp"
+                className="text-xs sm:text-sm font-extrabold shadow-md px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
+              >
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <WhatsAppIcon className="h-4 w-4 mr-1.5" />
+                  Cotizar paquete
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 
   // ---------- FLYER-INSPIRED DESIGN (FOR ALL OTHER PACKAGES) ----------
   const primary = primaryColor ?? pkg.primaryColor ?? "#FF74E9";
   const secondary = secondaryColor ?? pkg.secondaryColor ?? "#FFDE5D";
-  const img1 = image1 ?? pkg.image1 ?? images.sensorial;
-  const img2 = image2 ?? pkg.image2 ?? images.sensorial2;
+  const img1 = image1 ?? pkg.image1 ?? imagesSensoriales.sensorial;
+  const img2 = image2 ?? pkg.image2 ?? imagesSensoriales.sensorial2;
 
   return (
     <div

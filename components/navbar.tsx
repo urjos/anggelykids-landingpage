@@ -8,7 +8,7 @@ import { Menu, X, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn, buildWhatsAppUrl } from "@/lib/utils";
-import { NAV_LINKS } from "@/constants/nav_links";
+import { NAV_LINKS } from "@/constants/nav-links";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);

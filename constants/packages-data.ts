@@ -1,4 +1,4 @@
-import { images } from "./images";
+import { imagesInfantiles, imagesHuntrix } from "./images";
 
 export type PackageCategory =
   | "clasicos"
@@ -57,8 +57,8 @@ export const PACKAGES: PartyPackage[] = [
     ],
     primaryColor: "#F9B7F4",
     secondaryColor: "#FFDE5D",
-    image1: images.basico,
-    image2: images.basico2,
+    image1: imagesInfantiles.basico,
+    image2: imagesInfantiles.basico2,
   },
   {
     id: "mi-fiesta",
@@ -88,8 +88,8 @@ export const PACKAGES: PartyPackage[] = [
     courtesy: ["Túnel Mágico"],
     primaryColor: "#8FDEE5",
     secondaryColor: "#FFDE5D",
-    image1: images.mifiesta,
-    image2: images.mifiesta2,
+    image1: imagesInfantiles.mifiesta,
+    image2: imagesInfantiles.mifiesta2,
   },
   {
     id: "super-fiesta",
@@ -120,8 +120,8 @@ export const PACKAGES: PartyPackage[] = [
     courtesy: ["Encapsulador de burbujas", "Túnel Mágico"],
     primaryColor: "#F2CB66",
     secondaryColor: "#FFDE5D",
-    image1: images.superFiesta,
-    image2: images.superFiesta2,
+    image1: imagesInfantiles.superFiesta,
+    image2: imagesInfantiles.superFiesta2,
   },
   {
     id: "mega-fiesta",
@@ -152,8 +152,8 @@ export const PACKAGES: PartyPackage[] = [
     courtesy: ["Túnel Mágico", "2 Bombardas", "Pitos y matracas"],
     primaryColor: "#A7D85A",
     secondaryColor: "#FFDE5D",
-    image1: images.megaFiesta,
-    image2: images.megaFiesta2,
+    image1: imagesInfantiles.megaFiesta,
+    image2: imagesInfantiles.megaFiesta2,
   },
   {
     id: "fiesta-premium",
@@ -189,8 +189,8 @@ export const PACKAGES: PartyPackage[] = [
     ],
     primaryColor: "#FF74E9",
     secondaryColor: "#FDDF5D",
-    image1: images.fiestaPremium,
-    image2: images.fiestaPremium2,
+    image1: imagesInfantiles.fiestaPremium,
+    image2: imagesInfantiles.fiestaPremium2,
   },
   {
     id: "mega-fiesta-premium",
@@ -228,8 +228,8 @@ export const PACKAGES: PartyPackage[] = [
     featured: true,
     primaryColor: "#FFCE4B",
     secondaryColor: "#E6FE5E",
-    image1: images.megaFiestaPremium,
-    image2: images.megaFiestaPremium2,
+    image1: imagesInfantiles.megaFiestaPremium,
+    image2: imagesInfantiles.megaFiestaPremium2,
   },
 
   // ---------- ESPECIAL HUNTRIX ----------
@@ -240,6 +240,9 @@ export const PACKAGES: PartyPackage[] = [
     price: 319,
     priceLabel: "S/ 319",
     duration: "1h 30 min",
+    image1: imagesHuntrix.huntrixFlyer,
+    primaryColor: "#9333EA",
+    secondaryColor: "#EC4899",
     includes: [
       "Animadora Rumi caracterizada",
       "Equipo de sonido 8' + Micrófono inalámbrico",
@@ -261,6 +264,9 @@ export const PACKAGES: PartyPackage[] = [
     price: 549,
     priceLabel: "S/ 549",
     duration: "1h 30 min",
+    image1: imagesHuntrix.huntrixBasico,
+    primaryColor: "#9333EA",
+    secondaryColor: "#EC4899",
     includes: [
       "Animadora Rumi caracterizada",
       "2 señoritas caracterizadas (Zoey y Mira)",
@@ -287,6 +293,10 @@ export const PACKAGES: PartyPackage[] = [
     price: 699,
     priceLabel: "S/ 699",
     duration: "2h 30 min",
+    featured: true,
+    image1: imagesHuntrix.huntrixBasico,
+    primaryColor: "#9333EA",
+    secondaryColor: "#EC4899",
     includes: [
       "Animadora vestida a corde a los colores de la temática",
       "3 Personajes Huntrix: Rumi, Zoey y Mira",
@@ -311,7 +321,6 @@ export const PACKAGES: PartyPackage[] = [
       "30 stickers para nombre",
       "Bola de luz rítmica",
     ],
-    featured: true,
   },
 
   // ---------- SENSORIAL & ESTIMULACIÓN ----------

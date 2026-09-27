@@ -10,24 +10,24 @@ export function Footer() {
   );
 
   return (
-    <footer className="bg-angely-purple-900 py-2 sm:py-6 text-white">
+    <footer className="bg-angely-purple-900 py-2 text-white">
       <div className="container max-w-5xl mx-auto grid gap-2">
-        <div className="grid gap-5 lg:grid-cols-3 items-start justify-center text-center py-4">
+        <div className="grid gap-3 lg:grid-cols-3 items-center justify-center text-center">
           {/* Columna 1: Logo y descripción */}
           <div className="hidden sm:flex flex-col items-center text-start max-w-xs gap-1">
             <div className="rounded-2xl p-2 shadow-sm inline-block">
               <Image
                 src="/logo.png"
                 alt="Anggelykids Shows y Eventos"
-                width={220}
-                height={134}
+                width={200}
+                height={100}
                 className="h-14 sm:h-16 w-auto object-contain"
                 quality={95}
               />
             </div>
-            <p className="text-sm text-white/70">
-              Shows infantiles temáticos y estimulación sensorial en Lima.
-              Hacemos de cada fiesta un momento inolvidable.
+            <p className="text-xs text-white/70">
+              Shows infantiles temáticos, sensoriales y mucho más. Hacemos de
+              cada fiesta un momento inolvidable.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-3 mt-4 text-center text-xs text-white/50">
+        <div className="border-t border-white/10 pt-3 text-center text-xs text-white/50">
           © {new Date().getFullYear()} Anggelykids Shows y Eventos. Todos los
           derechos reservados.
         </div>

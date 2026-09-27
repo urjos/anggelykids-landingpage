@@ -5,6 +5,7 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/utils";
 import { Faq } from "@/components/faq/faq";
+import WhatsAppIcon from "@/components/icons/whatsapp-icon";
 
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes | Anggelykids Shows y Eventos",
@@ -32,7 +33,7 @@ export default function FaqPage() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Button asChild size="lg" variant="whatsapp">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-4 w-4" />
+                <WhatsAppIcon size={24} className="h-6 w-6" />
                 Escribir al WhatsApp
               </a>
             </Button>

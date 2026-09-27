@@ -12,6 +12,7 @@ import { PACKAGES } from "@/constants/packages-data";
 import { DISTRICTS } from "@/constants/districts";
 import { buildWhatsAppUrl, cn } from "@/lib/utils";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
+import { LightOrbs } from "../ui/light-orbs";
 
 function formatPhoneNumber(value: string) {
   let digits = value.replace(/\D/g, "");

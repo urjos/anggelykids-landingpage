@@ -1,11 +1,11 @@
-import { GraduationCap, Clock, Shirt, HeartHandshake } from "lucide-react";
-
 import { Card, CardContent } from "@/components/ui/card";
 import { VALUE_PROPS } from "@/constants/value-props";
+import { LightOrbs } from "../ui/light-orbs";
 
 export function ValueProps() {
   return (
     <section id="propuesta" className="py-20">
+      <LightOrbs />
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl font-extrabold text-angely-purple-900 sm:text-4xl">
@@ -31,24 +31,26 @@ export function ValueProps() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 lg:grid-cols-2">
           {VALUE_PROPS.map((item) => (
             <Card
               key={item.title}
-              className="border shadow-sm transition-transform hover:-translate-y-1"
+              className="border shadow-sm transition-transform hover:-translate-y-1 mx-auto max-w-lg"
             >
-              <CardContent className="pt-6">
+              <CardContent className="flex gap-3 p-4">
                 <div
-                  className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl ${item.color}`}
+                  className={`flex h-14 w-14 items-center justify-center rounded-2xl`}
                 >
-                  <item.icon className="h-7 w-7" />
+                  <item.icon className="size-9" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-angely-purple-900">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-foreground/70">
-                  {item.description}
-                </p>
+                <div>
+                  <h3 className="font-heading text-lg font-bold text-angely-purple-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-foreground/70">
+                    {item.description}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}

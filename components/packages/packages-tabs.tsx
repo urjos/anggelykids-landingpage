@@ -28,10 +28,10 @@ export function PackagesTabs() {
     <section id="paquetes" className="bg-angely-purple-50/50 py-10">
       <div className="container grid gap-5">
         <div className="mx-auto max-w-2xl text-center grid gap-3">
-          <h2 className="font-heading text-3xl font-extrabold text-angely-purple-900 sm:text-4xl">
+          <h2 className="font-heading text-4xl font-extrabold text-angely-purple-900">
             Nuestros paquetes
           </h2>
-          <p className="text-foreground/70">
+          <p className="text-foreground/70 text-sm">
             Elige la propuesta que mejor se adapte a la edad, temática y
             presupuesto de tu celebración.
           </p>

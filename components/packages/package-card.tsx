@@ -5,11 +5,7 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { cn, buildWhatsAppUrl, quotePackageMessage } from "@/lib/utils";
 import type { PartyPackage } from "@/constants/packages-data";
-import {
-  imagesHuntrixResources,
-  imagesHuntrix,
-  imagesSensoriales,
-} from "@/constants/images";
+import { imagesHuntrixResources, imagesSensoriales } from "@/constants/images";
 
 export interface PackageCardProps {
   pkg: PartyPackage;
@@ -37,8 +33,8 @@ export function PackageCard({
     const huntrixImage =
       image1 ??
       pkg.image1 ??
-      imagesHuntrix.huntrixFlyer ??
-      imagesHuntrix.huntrixBasico;
+      imagesHuntrixResources.huntrixFlyer ??
+      imagesHuntrixResources.huntrixBasico;
 
     return (
       <div
@@ -66,7 +62,7 @@ export function PackageCard({
 
         {/* TOP DECORATIONS: Disco Balls */}
         {/* Top-Left Disco Ball */}
-        <div className="absolute -top-7 -left-7 sm:-top-10 sm:-left-10 w-28 h-28 sm:w-44 sm:h-44 md:w-52 md:h-52 pointer-events-none select-none z-10">
+        <div className="absolute -top-7 -left-12 sm:-top-10 sm:-left-10 w-28 h-28 sm:w-44 sm:h-44 md:w-52 md:h-52 pointer-events-none select-none z-10">
           <Image
             src={imagesHuntrixResources.discoBallDecoration}
             alt="Disco ball"
@@ -76,7 +72,7 @@ export function PackageCard({
         </div>
 
         {/* Top-Right Disco Ball */}
-        <div className="absolute -top-7 -right-7 sm:-top-10 sm:-right-10 w-28 h-28 sm:w-44 sm:h-44 md:w-52 md:h-52 pointer-events-none select-none z-10">
+        <div className="absolute -top-7 -right-12 sm:-top-10 sm:-right-10 w-28 h-28 sm:w-44 sm:h-44 md:w-52 md:h-52 pointer-events-none select-none z-10">
           <Image
             src={imagesHuntrixResources.discoBallDecoration}
             alt="Disco ball"
@@ -139,7 +135,7 @@ export function PackageCard({
         </div>
 
         {/* Note middle */}
-        <div className="absolute top-[42%] right-[42%] hidden sm:block w-7 h-7 pointer-events-none select-none z-10 opacity-80 rotate-[12deg]">
+        <div className="absolute top-[42%] right-[42%] hidden sm:block size-10 pointer-events-none select-none z-10 opacity-80 rotate-[12deg]">
           <svg
             viewBox="0 0 32 32"
             fill="none"
@@ -160,7 +156,7 @@ export function PackageCard({
         </div>
 
         {/* Note bottom left */}
-        <div className="absolute bottom-[28%] left-8 sm:left-14 w-6 h-6 sm:w-8 sm:h-8 pointer-events-none select-none z-10 opacity-80 rotate-[-10deg]">
+        <div className="absolute bottom-[28%] left-8 sm:left-14 size-10 pointer-events-none select-none z-10 opacity-80 rotate-[-10deg]">
           <svg
             viewBox="0 0 32 32"
             fill="none"

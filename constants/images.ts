@@ -50,16 +50,15 @@ export const imagesSensoriales = {
   sensorial4,
 } as const;
 
-export const imagesHuntrix = {
-  huntrixBasico,
-  huntrixFlyer,
-} as const;
+export const imagesHuntrix = {} as const;
 
 export const imagesHuntrixResources = {
   girlsBackground,
   title,
   discoBallDecoration,
   sparks,
+  huntrixBasico,
+  huntrixFlyer,
 } as const;
 
 export type ImageKey = keyof typeof images;

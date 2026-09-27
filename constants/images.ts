@@ -50,14 +50,15 @@ export const imagesSensoriales = {
   sensorial4,
 } as const;
 
-export const imagesHuntrix = {} as const;
+export const imagesHuntrix = {
+  huntrixBasico,
+} as const;
 
 export const imagesHuntrixResources = {
   girlsBackground,
   title,
   discoBallDecoration,
   sparks,
-  huntrixBasico,
   huntrixFlyer,
 } as const;
 

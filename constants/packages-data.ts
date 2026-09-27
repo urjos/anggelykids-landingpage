@@ -240,7 +240,7 @@ export const PACKAGES: PartyPackage[] = [
     price: 319,
     priceLabel: "S/ 319",
     duration: "1h 30 min",
-    image1: imagesHuntrix.huntrixFlyer,
+    image1: imagesHuntrix.huntrixBasico,
     primaryColor: "#9333EA",
     secondaryColor: "#EC4899",
     includes: [

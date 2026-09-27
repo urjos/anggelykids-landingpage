@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { cn, buildWhatsAppUrl, quotePackageMessage } from "@/lib/utils";
 import type { PartyPackage } from "@/constants/packages-data";
-import { imagesHuntrixResources, imagesSensoriales } from "@/constants/images";
+import {
+  imagesHuntrix,
+  imagesHuntrixResources,
+  imagesSensoriales,
+} from "@/constants/images";
 
 export interface PackageCardProps {
   pkg: PartyPackage;
@@ -30,11 +34,7 @@ export function PackageCard({
 
   // ---------- HUNTRIX CARD: FAITHFUL TO THE OFFICIAL FLYER DESIGN ----------
   if (pkg.category === "huntrix") {
-    const huntrixImage =
-      image1 ??
-      pkg.image1 ??
-      imagesHuntrixResources.huntrixFlyer ??
-      imagesHuntrixResources.huntrixBasico;
+    const huntrixImage = image1 ?? pkg.image1 ?? imagesHuntrix.huntrixBasico;
 
     return (
       <div

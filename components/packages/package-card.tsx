@@ -56,7 +56,7 @@ export function PackageCard({
         {/* Featured Ribbon if active */}
         {pkg.featured && (
           <div className="relative z-30 bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 py-1.5 text-center text-xs font-black uppercase tracking-wider text-white shadow-sm">
-            ⭐ Paquete Más Elegido ⭐
+            Paquete Más Elegido
           </div>
         )}
 
@@ -391,7 +391,7 @@ export function PackageCard({
           className="relative z-20 py-1.5 text-center text-xs font-extrabold uppercase tracking-wider text-white shadow-sm"
           style={{ backgroundColor: primary }}
         >
-          ⭐ Más elegido
+          Más elegido
         </div>
       )}
 

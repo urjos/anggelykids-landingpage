@@ -22,6 +22,7 @@ import title from "@/public/images/resources/huntrix/huntrix-title.png";
 import sparks from "@/public/images/resources/huntrix/huntrix-sparks.png";
 import huntrixBasico from "@/public/images/shows/huntrix/huntrix-basico.jpg";
 import huntrixFlyer from "@/public/images/shows/huntrix/huntrix-1.png";
+import huntrixMedio from "@/public/images/shows/huntrix/huntrix-medio.jpg";
 
 export const images = {
   cloud1,
@@ -52,6 +53,7 @@ export const imagesSensoriales = {
 
 export const imagesHuntrix = {
   huntrixBasico,
+  huntrixMedio,
 } as const;
 
 export const imagesHuntrixResources = {

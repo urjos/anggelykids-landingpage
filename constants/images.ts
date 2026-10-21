@@ -23,6 +23,10 @@ import sparks from "@/public/images/resources/huntrix/huntrix-sparks.png";
 import huntrixBasico from "@/public/images/shows/huntrix/huntrix-basico.jpg";
 import huntrixFlyer from "@/public/images/shows/huntrix/huntrix-1.png";
 import huntrixMedio from "@/public/images/shows/huntrix/huntrix-medio.jpg";
+import geraldineR from "@/public/images/reviews/geraldineR.jpg";
+import jhosyS from "@/public/images/reviews/jhosyS.jpg";
+import gladysE from "@/public/images/reviews/gladysE.jpg";
+import lunaM from "@/public/images/reviews/lunaM.jpg";
 
 export const images = {
   cloud1,
@@ -64,8 +68,16 @@ export const imagesHuntrixResources = {
   huntrixFlyer,
 } as const;
 
+export const imagesReviews = {
+  gladysE,
+  geraldineR,
+  jhosyS,
+  lunaM,
+} as const;
+
 export type ImageKey = keyof typeof images;
 export type ImageInfantilKey = keyof typeof imagesInfantiles;
 export type ImageSensorialKey = keyof typeof imagesSensoriales;
 export type ImageHuntrixKey = keyof typeof imagesHuntrix;
 export type ImageHuntrixResourcesKey = keyof typeof imagesHuntrixResources;
+export type ReviewImage = (typeof imagesReviews)[keyof typeof imagesReviews];

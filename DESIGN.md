@@ -97,6 +97,9 @@ acción antes de leer el texto.
 | `package-card.tsx` | Tarjeta individual: precio, duración, inclusiones, obsequio, cortesía, CTA |
 | `quick-quote-form.tsx` | Formulario → arma mensaje → abre WhatsApp (no envía a backend) |
 | `faq.tsx` | Acordeón de preguntas frecuentes |
+| `review-card.tsx` | Tarjeta de recomendación de Facebook (pill "Recomienda", texto, autor, fecha, imagen opcional) |
+| `reviews-section.tsx` | Muro completo de recomendaciones + resumen de confianza + CTA a Facebook |
+| `reviews-teaser.tsx` | Banda con las 3 recomendaciones destacadas, usada bajo el hero del home |
 | `footer.tsx` | Enlaces, redes, aviso de "no incluye movilidad" |
 | `whatsapp-float-button.tsx` | Botón flotante fijo, `bottom-6 right-6 z-50` |
 
@@ -123,6 +126,23 @@ interface PartyPackage {
 Para agregar/editar un paquete: editar el arreglo `PACKAGES`. Para agregar
 una categoría nueva: añadirla a `PackageCategory` y a `CATEGORY_LABELS`, y
 listarla en `CATEGORIES` dentro de `packages-tabs.tsx`.
+
+### Recomendaciones (Facebook)
+
+Las reseñas se guardan en `constants/reviews.ts` (mismo patrón que `FAQS`).
+**Facebook no ofrece un feed público de reseñas**: desde 2018 las estrellas
+se reemplazaron por "Recomendaciones" (sí/no + texto) y su lectura vía Graph
+API (`/{page-id}/ratings`) exige Page access token, permisos y App Review.
+Por eso el contenido se cura a mano desde el volcado `reviews-facebook.txt`.
+
+- No mostrar estrellas ni un `aggregateRating` inventado: la UI usa el pill
+  "Recomienda" + el texto como protagonista.
+- `featured: true` marca las 3 recomendaciones que se muestran en el home.
+- `image` es **opcional**: apunta a una clave de `imagesReviews`
+  (`constants/images.ts`) y la tarjeta solo renderiza el bloque de foto cuando
+  existe. Ninguna reseña está obligada a tener imagen.
+- El total y el porcentaje (`REVIEWS.length`, `RECOMMENDED_PERCENTAGE`) se
+  calculan del arreglo, nunca se escriben a mano en la UI.
 
 ## 8. Integración de WhatsApp
 
@@ -161,3 +181,4 @@ datos, solo arma y abre un enlace de WhatsApp.
 2. **Nuevo componente de UI** → debe llevar borde grueso (`border-2`/`border-[3px]`) + alguna variante de `shadow-clay-*` si es interactivo o flota sobre el fondo.
 3. **Nuevo paquete/categoría** → solo tocar `lib/packages-data.ts`.
 4. **Nuevo CTA** → usar `Button` con la variante correspondiente; si abre WhatsApp, pasar siempre por `buildWhatsAppUrl`.
+5. **Nueva recomendación** → solo tocar `constants/reviews.ts`; la sección y el teaser leen de ahí. Las URLs de Facebook viven en ese mismo archivo (`FACEBOOK_PAGE_URL`, `FACEBOOK_REVIEWS_URL`), nunca se hardcodean.

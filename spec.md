@@ -133,5 +133,6 @@ no es exhaustivo.
 
 1. **Fotos y videos de mejor calidad** — pendiente que el dueño los
    comparta para reemplazar el material de los flyers en el sitio.
-2. **Testimonios concretos** (texto/capturas) a citar en una sección de
-   reseñas.
+2. ~~**Testimonios concretos** (texto/capturas) a citar en una sección de
+   reseñas.~~ **Resuelto** — 14 recomendaciones reales de Facebook cargadas en
+   `constants/reviews.ts`, renderizadas en `/resenas` y en el teaser del home.

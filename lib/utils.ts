@@ -17,3 +17,29 @@ export function buildWhatsAppUrl(message: string, phone = "51957189685") {
 export function quotePackageMessage(packageName: string, price: string) {
   return `Hola Anggelykids! 👋 Quiero cotizar el paquete "${packageName}" (${price}). ¿Me ayudan con la disponibilidad?`;
 }
+
+const MONTHS_ES = [
+  "enero",
+  "febrero",
+  "marzo",
+  "abril",
+  "mayo",
+  "junio",
+  "julio",
+  "agosto",
+  "septiembre",
+  "octubre",
+  "noviembre",
+  "diciembre",
+];
+
+/**
+ * Formatea una fecha ISO (YYYY-MM-DD) como "21 de marzo de 2026".
+ * Se hace a mano (sin Intl) para que el resultado sea idéntico en servidor y
+ * cliente y no dependa de la zona horaria.
+ */
+export function formatReviewDate(isoDate: string) {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  const monthName = MONTHS_ES[month - 1] ?? "";
+  return `${day} de ${monthName} de ${year}`;
+}

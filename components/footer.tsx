@@ -1,7 +1,9 @@
 import Image from "next/image";
-import { Facebook, Instagram, Phone } from "lucide-react";
+import Link from "next/link";
+import { Facebook, Instagram, Phone, ThumbsUp } from "lucide-react";
 
 import { buildWhatsAppUrl } from "@/lib/utils";
+import { FACEBOOK_PAGE_URL } from "@/constants/reviews";
 import TikTokIcon from "./icons/tiktok-icon";
 
 export function Footer() {
@@ -56,7 +58,7 @@ export function Footer() {
                 <Instagram className="h-4 w-4" />
               </a>
               <a
-                href="https://www.facebook.com/p/AnggelyKids-Shows-Eventos-100070584128490/"
+                href={FACEBOOK_PAGE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -74,6 +76,14 @@ export function Footer() {
                 <TikTokIcon className="h-4 w-4" />
               </a>
             </div>
+
+            <Link
+              href="/resenas"
+              className="mt-1 inline-flex items-center gap-1.5 text-xs font-bold text-angely-pink-300 transition-colors hover:text-white"
+            >
+              <ThumbsUp className="h-3.5 w-3.5" aria-hidden="true" />
+              Lee las reseñas de nuestras familias
+            </Link>
           </div>
 
           {/* Columna 3: Información importante */}
